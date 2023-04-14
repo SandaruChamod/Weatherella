@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C36707C29E98CF9006C673D /* WindDirHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C36707B29E98CF9006C673D /* WindDirHelper.swift */; };
 		3CCD25C429E71FD0002CA6F8 /* WeatherellaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD25C329E71FD0002CA6F8 /* WeatherellaApp.swift */; };
 		3CCD25C829E71FD0002CA6F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CCD25C729E71FD0002CA6F8 /* Assets.xcassets */; };
 		3CCD25CC29E71FD1002CA6F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CCD25CB29E71FD1002CA6F8 /* Preview Assets.xcassets */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C36707B29E98CF9006C673D /* WindDirHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindDirHelper.swift; sourceTree = "<group>"; };
 		3CCD25C029E71FD0002CA6F8 /* Weatherella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weatherella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CCD25C329E71FD0002CA6F8 /* WeatherellaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherellaApp.swift; sourceTree = "<group>"; };
 		3CCD25C729E71FD0002CA6F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		3CCD25D229E7202C002CA6F8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				3C36707B29E98CF9006C673D /* WindDirHelper.swift */,
 				3CCD25D629E720A4002CA6F8 /* london-air-pollution.json */,
 				3CCD25D329E72066002CA6F8 /* london-current-weather.json */,
 				3CCD25D429E7208C002CA6F8 /* london-hourly-summary.json */,
@@ -253,6 +256,7 @@
 				3CCD25C429E71FD0002CA6F8 /* WeatherellaApp.swift in Sources */,
 				3CCD25DD29E7219B002CA6F8 /* Double+Extensions.swift in Sources */,
 				3CCD25FA29E72667002CA6F8 /* CountrySearchSheet.swift in Sources */,
+				3C36707C29E98CF9006C673D /* WindDirHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

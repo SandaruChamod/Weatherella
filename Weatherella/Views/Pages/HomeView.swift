@@ -68,15 +68,22 @@ struct HomeView: View {
                     .foregroundColor(.black)
                     .shadow(color: .black, radius: 0.5)
                 
-                Text("Pressure:  \(current?.main.pressure ?? 0)")
+                Text("Pressure:  \(current?.main.pressure ?? 0) hPa")
                     .padding()
                     .font(.title2)
                     .foregroundColor(.black)
                     .shadow(color: .black, radius: 0.5)
                 
                 HStack {
-                    Text("field")
-    //                AsyncImage(url: URL(string: "https://openweathermap.org/img/w/\(weatherDataModel.forecast?.current.weather[0].icon ?? "").png"))
+                    AsyncImage(url: current?.weather.first?.iconImageURL) {
+                        image in
+                        image
+                            .resizable()
+                            .frame(width: 60, height: 60)
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    Text(current?.weather[0].main.rawValue ?? "")
                 }
                 
                 Spacer()

@@ -16,7 +16,7 @@ struct WeatherellaTabView: View {
                 }
             CurrentWeatherView()
                 .tabItem {
-                    Label("Current", systemImage: "sun.max.fill")
+                    Label("Weather Now", systemImage: "sun.max.fill")
                 }
             HourlyView()
                 .tabItem {

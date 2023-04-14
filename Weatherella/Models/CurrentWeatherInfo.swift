@@ -15,6 +15,12 @@ struct CurrentWeatherInfo: Codable {
     let clouds: Clouds
     let wind: Wind
     let dt: Double
+    let sys: DayTimes
+}
+
+struct DayTimes: Codable {
+    let sunrise: Int
+    let sunset: Int
 }
 
 struct Coordinates: Codable {

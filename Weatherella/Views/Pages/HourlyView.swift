@@ -27,7 +27,10 @@ struct HourlyView: View {
                 List(forecastList ?? []) { forecast in
                     HStack {
                         Spacer()
-                        Text("\(forecast.dt.getDateFromUTCTimestamp().formatted(date: .abbreviated, time: .shortened)) PM Sat")
+                        VStack (spacing: 0) {
+                            Text("\(forecast.dt.getDateFromUTCTimestamp().formatted(.dateTime.hour(.twoDigits(amPM: .abbreviated)).attributed))")
+                            Text("\(forecast.dt.getDateFromUTCTimestamp().formatted(.dateTime.weekday(.abbreviated)))")
+                        }
                         Spacer()
                         AsyncImage(url: forecast.weather.first?.iconImageURL) {
                             image in
@@ -37,7 +40,7 @@ struct HourlyView: View {
                         } placeholder: {
                             ProgressView()
                         }
-                        Text("\(forecast.main.temp.convertToSingleDecimal()) C")
+                        Text("\(forecast.main.temp.convertToSingleDecimal())ºC")
                         Spacer()
                         Text("\(forecast.weather.first?.main.rawValue ?? "")")
                         Spacer()
