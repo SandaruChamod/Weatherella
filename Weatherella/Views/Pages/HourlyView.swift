@@ -14,7 +14,7 @@ struct HourlyView: View {
         let forecast = appWeatherData.forecastInfo
         let forecastList = forecast?.forecastWeatherInfo.list
         ZStack {
-            Image("background2")
+            Image("background")
                 .resizable()
                 .ignoresSafeArea(.all)
             VStack {

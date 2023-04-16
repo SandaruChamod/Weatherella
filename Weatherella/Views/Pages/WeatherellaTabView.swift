@@ -16,11 +16,11 @@ struct WeatherellaTabView: View {
                 }
             CurrentWeatherView()
                 .tabItem {
-                    Label("Weather Now", systemImage: "sun.max.fill")
+                    Label("WeatherNow", systemImage: "sun.max.fill")
                 }
             HourlyView()
                 .tabItem {
-                    Label("Hourly", systemImage: "clock.fill")
+                    Label("Hourly Summary", systemImage: "clock.fill")
                 }
             ForecastView()
                 .tabItem {
@@ -28,7 +28,7 @@ struct WeatherellaTabView: View {
                 }
             PollutionView()
                 .tabItem {
-                    Label("AQI", systemImage: "aqi.high")
+                    Label("Pollution", systemImage: "aqi.high")
                 }
         }
         .tint(.blue)
