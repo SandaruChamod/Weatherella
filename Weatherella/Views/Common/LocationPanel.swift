@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct LocationPanel: View {
-    @State var content: String
+    @EnvironmentObject private var appWeatherData: AppWeatherData
     
     var body: some View {
-        Text(content)
+        let forecast = appWeatherData.forecastInfo?.forecastWeatherInfo
+        Text("\(forecast?.city.name ?? ""), \(forecast?.city.country ?? "")")
             .font(.title)
             .foregroundColor(.black)
             .shadow(color: .black, radius: 0.5)

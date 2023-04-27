@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct TemperaturePanel: View {
-    @State var tempData: TemperatureDataModel
+    @EnvironmentObject private var appWeatherData: AppWeatherData
     
     var body: some View {
-        let min: String = tempData.min_temp.convertToSingleDecimal()
-        let max: String = tempData.max_temp.convertToSingleDecimal()
+        let current  = appWeatherData.forecastInfo?.currentWeatherInfo
+        let min: String = Double((current?.main.temp_min ?? 0)).convertToSingleDecimal()
+        let max: String = Double((current?.main.temp_max ?? 0)).convertToSingleDecimal()
+        let feelsLike: String = Double((current?.main.temp ?? 0)).convertToSingleDecimal()
 
         HStack {
             Spacer()
@@ -22,7 +24,7 @@ struct TemperaturePanel: View {
             Spacer()
         }
 
-        Text("Feels Like: \((tempData.feelsLike))ºC")
+        Text("Feels Like: \(feelsLike)ºC")
             .foregroundColor(.black)
     }
 }

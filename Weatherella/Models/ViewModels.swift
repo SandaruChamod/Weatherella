@@ -7,12 +7,6 @@
 
 import Foundation
 
-struct StatusViewModel {
-    let label: String
-    let imageUrl: URL
-    let frameOptions: FrameOption
-}
-
 struct FrameOption {
     let width: Double
     let height: Double

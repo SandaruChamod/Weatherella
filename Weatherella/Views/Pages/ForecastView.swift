@@ -20,7 +20,7 @@ struct ForecastView: View {
                 .ignoresSafeArea(.all)
             
             VStack {
-                LocationPanel(content: "\(forecast?.city.name ?? ""), \(forecast?.city.country ?? "")")
+                LocationPanel()
                 
                 List(forecastList ?? []) { forecast in
                     HStack (spacing: 10) {

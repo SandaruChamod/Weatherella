@@ -18,7 +18,6 @@ struct HomeView: View {
     @State var errorMessage = "Couldn't find the location"
     
     var body: some View {
-        let forecast = appWeatherData.forecastInfo?.forecastWeatherInfo
         let current  = appWeatherData.forecastInfo?.currentWeatherInfo
         let currentDate = current?.dt.getDateFromUTCTimestamp() ?? Date()
         
@@ -42,7 +41,7 @@ struct HomeView: View {
                     Spacer()
                 }
                 
-                LocationPanel(content: "\(forecast?.city.name ?? ""), \(forecast?.city.country ?? "")")
+                LocationPanel()
                 
                 Text("\(currentDate.formatted(date: .abbreviated, time: .shortened))")
                 .padding()
@@ -70,7 +69,7 @@ struct HomeView: View {
                     .foregroundColor(.black)
                     .shadow(color: .black, radius: 0.5)
                 
-                WeatherStatusPanel(statusViewModel: StatusViewModel(label: current?.weather.first?.main.rawValue ?? "", imageUrl: (current?.weather.first?.iconImageURL ?? URL(string: ""))!, frameOptions: FrameOption(width: 60, height: 60)))
+                WeatherStatusPanel(frameOptions: FrameOption(width: 60, height: 60))
                 
                 Spacer()
             }

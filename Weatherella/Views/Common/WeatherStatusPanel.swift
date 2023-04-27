@@ -8,19 +8,21 @@
 import SwiftUI
 
 struct WeatherStatusPanel: View {
-    @State var statusViewModel: StatusViewModel
-    
+    @EnvironmentObject private var appWeatherData: AppWeatherData
+    @State var frameOptions: FrameOption
+
     var body: some View {
+        let current  = appWeatherData.forecastInfo?.currentWeatherInfo
         HStack {
-            AsyncImage(url: statusViewModel.imageUrl) {
+            AsyncImage(url: (current?.weather.first?.iconImageURL ?? URL(string: ""))!) {
                 image in
                 image
                     .resizable()
-                    .frame(width: statusViewModel.frameOptions.width, height: statusViewModel.frameOptions.height)
+                    .frame(width: frameOptions.width, height: frameOptions.height)
             } placeholder: {
                 ProgressView()
             }
-            Text(statusViewModel.label)
+            Text(current?.weather.first?.main.rawValue ?? "")
         }
     }
 }

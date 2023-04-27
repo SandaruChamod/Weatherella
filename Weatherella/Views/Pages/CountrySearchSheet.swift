@@ -22,6 +22,7 @@ struct CountrySearchSheet: View {
                 TextField("City", text: $appWeatherData.city)
                     .textFieldStyle(.roundedBorder)
                     .padding(.horizontal)
+                    .disableAutocorrection(true)
                 Button {
                     Task {
                         do {

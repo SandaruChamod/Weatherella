@@ -34,6 +34,7 @@
 		3CCD25F829E72635002CA6F8 /* PollutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD25F729E72635002CA6F8 /* PollutionView.swift */; };
 		3CCD25FA29E72667002CA6F8 /* CountrySearchSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD25F929E72667002CA6F8 /* CountrySearchSheet.swift */; };
 		3CCD25FB29E728C5002CA6F8 /* london-current-weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CCD25D329E72066002CA6F8 /* london-current-weather.json */; };
+		3CE77B0E29FA503C002B0CD2 /* URLhelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE77B0D29FA503C002B0CD2 /* URLhelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		3CCD25F529E72613002CA6F8 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
 		3CCD25F729E72635002CA6F8 /* PollutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutionView.swift; sourceTree = "<group>"; };
 		3CCD25F929E72667002CA6F8 /* CountrySearchSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySearchSheet.swift; sourceTree = "<group>"; };
+		3CE77B0D29FA503C002B0CD2 /* URLhelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLhelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				3CCD25DA29E72148002CA6F8 /* LocationHelper.swift */,
 				3CCD25DC29E7219B002CA6F8 /* Double+Extensions.swift */,
 				3CB85CD229ED29650040DF81 /* Int+Extensions.swift */,
+				3CE77B0D29FA503C002B0CD2 /* URLhelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				3CCD25F429E725E6002CA6F8 /* HourlyView.swift in Sources */,
 				3CB85CD329ED29650040DF81 /* Int+Extensions.swift in Sources */,
 				3CB85CD129ED22FE0040DF81 /* TemperatureLabel.swift in Sources */,
+				3CE77B0E29FA503C002B0CD2 /* URLhelper.swift in Sources */,
 				3CCD25F829E72635002CA6F8 /* PollutionView.swift in Sources */,
 				3CCD25F029E72503002CA6F8 /* CurrentWeatherView.swift in Sources */,
 				3CCD25EE29E724CA002CA6F8 /* WeatherellaTabView.swift in Sources */,
