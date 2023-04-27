@@ -16,6 +16,7 @@ class AppWeatherData: ObservableObject {
     }
     
     private func requestFromWeatherAPI<T: Decodable>(_ type: T.Type, for url: String) async throws -> T {
+        print("my URL :\(url)")
         guard let url = URL(string: url) else {
             throw fatalError("Given URL is invalid. Kindly check the URL")
         }
@@ -65,9 +66,8 @@ extension AppWeatherData {
 // MARK: API functions
 extension AppWeatherData {
     func getCityCurrentWeather() async throws  -> CurrentWeatherInfo {
-        let cityValidated = city.replacingOccurrences(of: " ", with: "%20")
-        let urlInString = "\(WeatherAPI.current.url)&q=\(cityValidated)"
-        print(urlInString)
+        let cityValidated = city.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        let urlInString = "\(WeatherAPI.current.url)&q=\(String(describing: cityValidated!))"
         do {
             let currentWeatherData = try await requestFromWeatherAPI(CurrentWeatherInfo.self, for: urlInString)
             return currentWeatherData
@@ -77,9 +77,8 @@ extension AppWeatherData {
     }
     
     func getCityForecastWeather() async throws  -> ForecastWeatherInfo {
-        let cityValidated = city.replacingOccurrences(of: " ", with: "%20")
-        let urlInString = "\(WeatherAPI.forecast.url)&q=\(cityValidated)"
-        print(urlInString)
+        let cityValidated = city.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+        let urlInString = "\(WeatherAPI.forecast.url)&q=\(String(describing: cityValidated!))"
         do {
             let forecastWeatherData = try await requestFromWeatherAPI(ForecastWeatherInfo.self, for: urlInString)
             return forecastWeatherData
