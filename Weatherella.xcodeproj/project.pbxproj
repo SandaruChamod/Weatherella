@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3C36707C29E98CF9006C673D /* WindDirHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C36707B29E98CF9006C673D /* WindDirHelper.swift */; };
+		3CB85CC729ECEA950040DF81 /* WeatherStatusPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB85CC629ECEA950040DF81 /* WeatherStatusPanel.swift */; };
+		3CB85CC929ECEAEE0040DF81 /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB85CC829ECEAEE0040DF81 /* ViewModels.swift */; };
+		3CB85CCD29ED1BEE0040DF81 /* TemperaturePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB85CCC29ED1BEE0040DF81 /* TemperaturePanel.swift */; };
+		3CB85CCF29ED1F150040DF81 /* LocationPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB85CCE29ED1F150040DF81 /* LocationPanel.swift */; };
+		3CB85CD129ED22FE0040DF81 /* TemperatureLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB85CD029ED22FE0040DF81 /* TemperatureLabel.swift */; };
+		3CB85CD329ED29650040DF81 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB85CD229ED29650040DF81 /* Int+Extensions.swift */; };
 		3CCD25C429E71FD0002CA6F8 /* WeatherellaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD25C329E71FD0002CA6F8 /* WeatherellaApp.swift */; };
 		3CCD25C829E71FD0002CA6F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CCD25C729E71FD0002CA6F8 /* Assets.xcassets */; };
 		3CCD25CC29E71FD1002CA6F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CCD25CB29E71FD1002CA6F8 /* Preview Assets.xcassets */; };
@@ -32,6 +38,12 @@
 
 /* Begin PBXFileReference section */
 		3C36707B29E98CF9006C673D /* WindDirHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindDirHelper.swift; sourceTree = "<group>"; };
+		3CB85CC629ECEA950040DF81 /* WeatherStatusPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStatusPanel.swift; sourceTree = "<group>"; };
+		3CB85CC829ECEAEE0040DF81 /* ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModels.swift; sourceTree = "<group>"; };
+		3CB85CCC29ED1BEE0040DF81 /* TemperaturePanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperaturePanel.swift; sourceTree = "<group>"; };
+		3CB85CCE29ED1F150040DF81 /* LocationPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPanel.swift; sourceTree = "<group>"; };
+		3CB85CD029ED22FE0040DF81 /* TemperatureLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureLabel.swift; sourceTree = "<group>"; };
+		3CB85CD229ED29650040DF81 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		3CCD25C029E71FD0002CA6F8 /* Weatherella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weatherella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CCD25C329E71FD0002CA6F8 /* WeatherellaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherellaApp.swift; sourceTree = "<group>"; };
 		3CCD25C729E71FD0002CA6F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +79,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3CB85CC529ECEA580040DF81 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3CB85CC629ECEA950040DF81 /* WeatherStatusPanel.swift */,
+				3CB85CCC29ED1BEE0040DF81 /* TemperaturePanel.swift */,
+				3CB85CCE29ED1F150040DF81 /* LocationPanel.swift */,
+				3CB85CD029ED22FE0040DF81 /* TemperatureLabel.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		3CCD25B729E71FCF002CA6F8 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +139,7 @@
 				3CCD25D829E720B6002CA6F8 /* Keys.swift */,
 				3CCD25DA29E72148002CA6F8 /* LocationHelper.swift */,
 				3CCD25DC29E7219B002CA6F8 /* Double+Extensions.swift */,
+				3CB85CD229ED29650040DF81 /* Int+Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -134,6 +158,7 @@
 				3CCD25E229E722CD002CA6F8 /* CurrentWeatherInfo.swift */,
 				3CCD25E429E722F2002CA6F8 /* WeatherCodables.swift */,
 				3CCD25E629E7234E002CA6F8 /* PollutionInfo.swift */,
+				3CB85CC829ECEAEE0040DF81 /* ViewModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -149,6 +174,7 @@
 		3CCD25EB29E72496002CA6F8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3CB85CC529ECEA580040DF81 /* Common */,
 				3CCD25EC29E724A4002CA6F8 /* Pages */,
 			);
 			path = Views;
@@ -244,15 +270,21 @@
 				3CCD25F229E725AA002CA6F8 /* HomeView.swift in Sources */,
 				3CCD25DB29E72148002CA6F8 /* LocationHelper.swift in Sources */,
 				3CCD25E329E722CD002CA6F8 /* CurrentWeatherInfo.swift in Sources */,
+				3CB85CCF29ED1F150040DF81 /* LocationPanel.swift in Sources */,
 				3CCD25E729E7234E002CA6F8 /* PollutionInfo.swift in Sources */,
 				3CCD25D929E720B6002CA6F8 /* Keys.swift in Sources */,
 				3CCD25F429E725E6002CA6F8 /* HourlyView.swift in Sources */,
+				3CB85CD329ED29650040DF81 /* Int+Extensions.swift in Sources */,
+				3CB85CD129ED22FE0040DF81 /* TemperatureLabel.swift in Sources */,
 				3CCD25F829E72635002CA6F8 /* PollutionView.swift in Sources */,
 				3CCD25F029E72503002CA6F8 /* CurrentWeatherView.swift in Sources */,
 				3CCD25EE29E724CA002CA6F8 /* WeatherellaTabView.swift in Sources */,
 				3CCD25EA29E72380002CA6F8 /* AppWeatherData.swift in Sources */,
 				3CCD25E529E722F2002CA6F8 /* WeatherCodables.swift in Sources */,
 				3CCD25F629E72613002CA6F8 /* ForecastView.swift in Sources */,
+				3CB85CC929ECEAEE0040DF81 /* ViewModels.swift in Sources */,
+				3CB85CC729ECEA950040DF81 /* WeatherStatusPanel.swift in Sources */,
+				3CB85CCD29ED1BEE0040DF81 /* TemperaturePanel.swift in Sources */,
 				3CCD25C429E71FD0002CA6F8 /* WeatherellaApp.swift in Sources */,
 				3CCD25DD29E7219B002CA6F8 /* Double+Extensions.swift in Sources */,
 				3CCD25FA29E72667002CA6F8 /* CountrySearchSheet.swift in Sources */,

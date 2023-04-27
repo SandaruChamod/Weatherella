@@ -18,18 +18,19 @@ struct HomeView: View {
     @State var errorMessage = "Couldn't find the location"
     
     var body: some View {
-        let forecast = appWeatherData.forecastInfo
+        let forecast = appWeatherData.forecastInfo?.forecastWeatherInfo
         let current  = appWeatherData.forecastInfo?.currentWeatherInfo
-        let currentDate = forecast?.currentWeatherInfo.dt.getDateFromUTCTimestamp() ?? Date()
+        let currentDate = current?.dt.getDateFromUTCTimestamp() ?? Date()
         
         ZStack {
             Image("background2")
                 .resizable()
+                .ignoresSafeArea(.all)
+
             VStack {
                 Spacer()
                 HStack {
                     Spacer()
-                    
                     Button {
                         self.isLocationChanging.toggle()
                     } label: {
@@ -38,15 +39,10 @@ struct HomeView: View {
                             .font(.system(size: 30))
                     }
                     .padding()
-                    
                     Spacer()
                 }
                 
-                Text("\(forecast?.forecastWeatherInfo.city.name ?? ""), \(forecast?.forecastWeatherInfo.city.country ?? "")")
-                    .font(.title)
-                    .foregroundColor(.black)
-                    .shadow(color: .black, radius: 0.5)
-                    .multilineTextAlignment(.center)
+                LocationPanel(content: "\(forecast?.city.name ?? ""), \(forecast?.city.country ?? "")")
                 
                 Text("\(currentDate.formatted(date: .abbreviated, time: .shortened))")
                 .padding()
@@ -74,17 +70,7 @@ struct HomeView: View {
                     .foregroundColor(.black)
                     .shadow(color: .black, radius: 0.5)
                 
-                HStack {
-                    AsyncImage(url: current?.weather.first?.iconImageURL) {
-                        image in
-                        image
-                            .resizable()
-                            .frame(width: 60, height: 60)
-                    } placeholder: {
-                        ProgressView()
-                    }
-                    Text(current?.weather[0].main.rawValue ?? "")
-                }
+                WeatherStatusPanel(statusViewModel: StatusViewModel(label: current?.weather.first?.main.rawValue ?? "", imageUrl: (current?.weather.first?.iconImageURL ?? URL(string: ""))!, frameOptions: FrameOption(width: 60, height: 60)))
                 
                 Spacer()
             }

@@ -11,8 +11,8 @@ struct ForecastView: View {
     @EnvironmentObject private var appWeatherData: AppWeatherData
 
     var body: some View {
-        let forecast = appWeatherData.forecastInfo
-        let forecastList = forecast?.forecastWeatherInfo.list
+        let forecast = appWeatherData.forecastInfo?.forecastWeatherInfo
+        let forecastList = forecast?.list
         
         ZStack {
             Image("background2")
@@ -20,11 +20,7 @@ struct ForecastView: View {
                 .ignoresSafeArea(.all)
             
             VStack {
-                Text("\(forecast?.forecastWeatherInfo.city.name ?? ""), \(forecast?.forecastWeatherInfo.city.country ?? "")")
-                    .font(.title)
-                    .foregroundColor(.black)
-                    .shadow(color: .black, radius: 0.5)
-                    .multilineTextAlignment(.center)
+                LocationPanel(content: "\(forecast?.city.name ?? ""), \(forecast?.city.country ?? "")")
                 
                 List(forecastList ?? []) { forecast in
                     HStack (spacing: 10) {

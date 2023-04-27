@@ -14,48 +14,25 @@ struct PollutionView: View {
     var body: some View {
         
         let formattedPollutionData = appWeatherData.getFormattedPollutionData()
-        let forecast = appWeatherData.forecastInfo
-        let current  = forecast?.currentWeatherInfo
-        let currentDate = current?.dt.getDateFromUTCTimestamp() ?? Date()
+        let forecast = appWeatherData.forecastInfo?.forecastWeatherInfo
+        let current  = appWeatherData.forecastInfo?.currentWeatherInfo
         
         ZStack {
             Image("background")
                 .resizable()
                 .ignoresSafeArea(.all)
+            
             VStack (spacing: 30) {
-                Text("\(forecast?.forecastWeatherInfo.city.name ?? ""), \(forecast?.forecastWeatherInfo.city.country ?? "")")
-                    .font(.title)
-                    .foregroundColor(.black)
-                    .shadow(color: .black, radius: 0.5)
-                    .multilineTextAlignment(.center)
+                LocationPanel(content: "\(forecast?.city.name ?? ""), \(forecast?.city.country ?? "")")
                 
                 Text("\(current?.main.temp.convertToSingleDecimal() ?? "")ºC")
                     .font(.title2)
                     .foregroundColor(.black)
                     .shadow(color: .black, radius: 0.5)
                 
-                HStack {
-                    AsyncImage(url: current?.weather.first?.iconImageURL) {
-                        image in
-                        image
-                            .resizable()
-                            .frame(width: 60, height: 60)
-                    } placeholder: {
-                        ProgressView()
-                    }
-                    Text(current?.weather[0].main.rawValue ?? "")
-                }
+                WeatherStatusPanel(statusViewModel: StatusViewModel(label: current?.weather.first?.main.rawValue ?? "", imageUrl: (current?.weather.first?.iconImageURL ?? URL(string: ""))!, frameOptions: FrameOption(width: 60, height: 60)))
                 
-                HStack {
-                    Spacer()
-                    Text("H: \((Int)(current?.main.temp_min ?? 0))ºC")
-                    Spacer()
-                    Text("Low: \((Int)(current?.main.temp_max ?? 0))ºC")
-                    Spacer()
-                }
-
-                Text("Feels Like: \((Int)(current?.main.temp ?? 0))ºC")
-                    .foregroundColor(.black)
+                TemperaturePanel(tempData: TemperatureDataModel(min_temp: Int(current?.main.temp_min ?? 0), max_temp: Int(current?.main.temp_max ?? 0), feelsLike: Int(current?.main.temp ?? 0)))
                 
                 HStack {
                     Spacer()
@@ -64,6 +41,7 @@ struct PollutionView: View {
                         .bold()
                     Spacer()
                 }
+                
                 HStack {
                     ForEach(formattedPollutionData, id: \.self.id) { pollutionData in
                         VStack {
