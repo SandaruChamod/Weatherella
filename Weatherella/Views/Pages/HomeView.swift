@@ -27,7 +27,33 @@ struct HomeView: View {
                 .ignoresSafeArea(.all)
 
             VStack {
-                Spacer()
+                VStack {
+                    ZStack {
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            Image("weather")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 100, height: 40)
+                            Text("Weatherella™")
+                                .tracking(5)
+                                .foregroundColor(.black)
+                                .font(.system(.body, design: .rounded))
+                                
+                            Spacer()
+                        }
+                        .padding()
+                        .background(
+                            RoundedRectangle(cornerRadius: 4, style: .continuous)
+                                .fill(.white)
+                                .frame(maxWidth: 400, maxHeight: 50)
+                                .opacity(0.9)
+                        )
+                    }
+                }
+                .padding(.top, 80)
+                .padding(.horizontal, 5)
                 HStack {
                     Spacer()
                     Button {

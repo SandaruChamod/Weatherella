@@ -34,6 +34,7 @@
 		3CCD25F829E72635002CA6F8 /* PollutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD25F729E72635002CA6F8 /* PollutionView.swift */; };
 		3CCD25FA29E72667002CA6F8 /* CountrySearchSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD25F929E72667002CA6F8 /* CountrySearchSheet.swift */; };
 		3CCD25FB29E728C5002CA6F8 /* london-current-weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CCD25D329E72066002CA6F8 /* london-current-weather.json */; };
+		3CCE74BF29FAE62100FE7E8E /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCE74BE29FAE62100FE7E8E /* SplashScreen.swift */; };
 		3CE77B0E29FA503C002B0CD2 /* URLhelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE77B0D29FA503C002B0CD2 /* URLhelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		3CCD25F529E72613002CA6F8 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
 		3CCD25F729E72635002CA6F8 /* PollutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutionView.swift; sourceTree = "<group>"; };
 		3CCD25F929E72667002CA6F8 /* CountrySearchSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySearchSheet.swift; sourceTree = "<group>"; };
+		3CCE74BE29FAE62100FE7E8E /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		3CE77B0D29FA503C002B0CD2 /* URLhelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLhelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,6 +195,7 @@
 				3CCD25F529E72613002CA6F8 /* ForecastView.swift */,
 				3CCD25F729E72635002CA6F8 /* PollutionView.swift */,
 				3CCD25F929E72667002CA6F8 /* CountrySearchSheet.swift */,
+				3CCE74BE29FAE62100FE7E8E /* SplashScreen.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CCE74BF29FAE62100FE7E8E /* SplashScreen.swift in Sources */,
 				3CCD25F229E725AA002CA6F8 /* HomeView.swift in Sources */,
 				3CCD25DB29E72148002CA6F8 /* LocationHelper.swift in Sources */,
 				3CCD25E329E722CD002CA6F8 /* CurrentWeatherInfo.swift in Sources */,
