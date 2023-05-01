@@ -16,7 +16,6 @@ struct PollutionView: View {
 
     var body: some View {
         let formattedPollutionData = appWeatherData.getFormattedPollutionData()
-        let current  = appWeatherData.forecastInfo?.currentWeatherInfo
         
         ZStack {
             Image("background")

@@ -11,7 +11,6 @@ import SwiftUI
     Country Search View
  */
 struct CountrySearchSheet: View {
-    @State var cityTextInput: String =  ""
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject private var appWeatherData: AppWeatherData
     
@@ -22,28 +21,29 @@ struct CountrySearchSheet: View {
         ZStack {
             Color.cyan.edgesIgnoringSafeArea(.all)
             VStack {
-                TextField("City", text: $appWeatherData.city)
+                TextField("Input City", text: $appWeatherData.city, onCommit: onCityInputCommit)
                     .textFieldStyle(.roundedBorder)
                     .padding(.horizontal)
                     .disableAutocorrection(true)
-                Button {
-                    Task {
-                        do {
-                            try await appWeatherData.getForecstDataForCity()
-                        } catch {
-                            print("Search error: \(error.localizedDescription)")
-                            showErrorMessage.toggle()
-                        }
-                    }
-                    dismiss()
-                } label: {
-                    Label("Search", systemImage: "magnifyingglass")
-                }
                 .tint(.black)
                 .buttonStyle(.bordered)
             }
         }
-        
+    }
+    
+    /**
+        Responsible to trigger on city input commit event.
+     */
+    func onCityInputCommit() -> Void {
+        Task {
+            do {
+                try await appWeatherData.getForecstDataForCity()
+            } catch {
+                print("Search error: \(error.localizedDescription)")
+                showErrorMessage.toggle()
+            }
+        }
+        dismiss()
     }
 }
 
