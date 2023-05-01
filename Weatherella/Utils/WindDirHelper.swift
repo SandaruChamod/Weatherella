@@ -8,8 +8,8 @@
 import Foundation
 
 /**
-    Responsible to convert degrees value to cardinal values
-    Returns String
+ Responsible to convert degrees value to cardinal values
+ Returns String
  */
 func convertDegToCardinal(deg: Int) -> String {
     let cardinalDir = ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW","N"]

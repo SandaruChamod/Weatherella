@@ -8,12 +8,12 @@
 import SwiftUI
 
 /**
-    Weather Status Panel
+ Weather Status Panel
  */
 struct WeatherStatusPanel: View {
     @EnvironmentObject private var appWeatherData: AppWeatherData
     @State var frameOptions: FrameOption
-
+    
     var body: some View {
         let current  = appWeatherData.forecastInfo?.currentWeatherInfo
         HStack {

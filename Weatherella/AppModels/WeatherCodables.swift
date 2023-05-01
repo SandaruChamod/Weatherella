@@ -8,7 +8,7 @@
 import Foundation
 
 /**
-    Forecast Weather Model
+ Forecast Weather Model
  */
 struct ForecastWeatherModel: Identifiable {
     let id = UUID()
@@ -18,7 +18,7 @@ struct ForecastWeatherModel: Identifiable {
 }
 
 /**
-    Forecast Weather Info
+ Forecast Weather Info
  */
 struct ForecastWeatherInfo: Codable {
     let list: [ForecastWeather]
@@ -26,7 +26,7 @@ struct ForecastWeatherInfo: Codable {
 }
 
 /**
-    Forecast Weather
+ Forecast Weather
  */
 struct ForecastWeather: Codable, Identifiable {
     let id = UUID()
@@ -37,7 +37,7 @@ struct ForecastWeather: Codable, Identifiable {
 }
 
 /**
-    City
+ City
  */
 struct City: Codable {
     let name: String

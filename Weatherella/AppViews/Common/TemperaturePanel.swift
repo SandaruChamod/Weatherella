@@ -8,7 +8,7 @@
 import SwiftUI
 
 /**
-    Temperature Panel
+ Temperature Panel
  */
 struct TemperaturePanel: View {
     @EnvironmentObject private var appWeatherData: AppWeatherData
@@ -18,7 +18,7 @@ struct TemperaturePanel: View {
         let min: Int = Int(current?.main.temp_min ?? 0)
         let max: Int = Int((current?.main.temp_max ?? 0))
         let feelsLike: Int = Int(current?.main.temp ?? 0)
-
+        
         VStack (spacing: 30) {
             HStack {
                 Spacer()

@@ -8,7 +8,7 @@
 import SwiftUI
 
 /**
-    App Weather Data
+ App Weather Data
  */
 class AppWeatherData: ObservableObject {
     @Published var forecastInfo: ForecastWeatherModel?
@@ -20,10 +20,10 @@ class AppWeatherData: ObservableObject {
     }
     
     /**
-        Responsible to fetch  weather data from weather API
-        Param requestType : Data type
-        Param urlString: URL string
-        Returns weather data
+     Responsible to fetch  weather data from weather API
+     Param requestType : Data type
+     Param urlString: URL string
+     Returns weather data
      */
     private func fetchFromWeatherAPI<T: Decodable>(_ requestType: T.Type, for urlString: String) async throws -> T {
         guard let url = URL(string: urlString) else {
@@ -39,10 +39,10 @@ class AppWeatherData: ObservableObject {
     }
     
     /**
-        Responsible to load  weather data from JSON file
-        Param requestType : Data type
-        Param filenameString: File name
-        Returns weather data
+     Responsible to load  weather data from JSON file
+     Param requestType : Data type
+     Param filenameString: File name
+     Returns weather data
      */
     func loadFromJSONFile<T: Decodable>(_ requestType: T.Type, _ filenameString: String) -> T {
         let readData: Data
@@ -72,8 +72,8 @@ class AppWeatherData: ObservableObject {
 
 extension AppWeatherData {
     /**
-        Responsible to return all the weather data in initial load
-        Returns ForecastWeatherModel
+     Responsible to return all the weather data in initial load
+     Returns ForecastWeatherModel
      */
     func getWeatherFromJSONFile() -> ForecastWeatherModel {
         let currentWeatherData = loadFromJSONFile(CurrentWeatherInfo.self, "london-current-weather")
@@ -87,8 +87,8 @@ extension AppWeatherData {
 
 extension AppWeatherData {
     /**
-        Responsible to return all the current weather info feched by the API call.
-        Returns CurrentWeatherInfo
+     Responsible to return all the current weather info feched by the API call.
+     Returns CurrentWeatherInfo
      */
     func getCityCurrentWeather() async throws  -> CurrentWeatherInfo {
         let cityValidated = urlEncodeString(stringValue: city)
@@ -102,8 +102,8 @@ extension AppWeatherData {
     }
     
     /**
-        Responsible to return all the forecast  weather info feched by the API call.
-        Returns ForecastWeatherInfo
+     Responsible to return all the forecast  weather info feched by the API call.
+     Returns ForecastWeatherInfo
      */
     func getCityForecastWeather() async throws  -> ForecastWeatherInfo {
         let cityValidated = urlEncodeString(stringValue: city)
@@ -117,7 +117,7 @@ extension AppWeatherData {
     }
     
     /**
-        Responsible to set all the weather  data for  the given city.
+     Responsible to set all the weather  data for  the given city.
      */
     func getForecstDataForCity() async throws {
         do {
@@ -126,7 +126,7 @@ extension AppWeatherData {
             let cityLatitude = cityCurrentWeather.coord.lat
             let cityLongitude = cityCurrentWeather.coord.lon
             let pollutionData = try await fetchPollutionDataFromAPI(lat: cityLatitude, lon: cityLongitude)
-
+            
             DispatchQueue.main.async {
                 // Create and set weather model object.
                 self.forecastInfo = ForecastWeatherModel(currentWeatherInfo: cityCurrentWeather, forecastWeatherInfo: cityForcastWhether, pollutionInfo: pollutionData)
@@ -137,8 +137,8 @@ extension AppWeatherData {
     }
     
     /**
-        Responsible to fetch all the pollution  data from API.
-        Returns PollutionInfo
+     Responsible to fetch all the pollution  data from API.
+     Returns PollutionInfo
      */
     func fetchPollutionDataFromAPI(lat: Double, lon: Double) async throws -> PollutionInfo {
         let urlInString = "\(APIConfigs.pollutionAPI.baseURL)&lat=\(lat)&lon=\(lon)"
@@ -153,8 +153,8 @@ extension AppWeatherData {
 
 extension AppWeatherData {
     /**
-        Responsible to map all the pollution data to display.
-        Returns [PollutionDataMap]
+     Responsible to map all the pollution data to display.
+     Returns [PollutionDataMap]
      */
     func getFormattedPollutionData() -> [PollutionDataMap] {
         if let forecastInfo = self.forecastInfo, let pollutionComponents = forecastInfo.pollutionInfo.list.first?.components {

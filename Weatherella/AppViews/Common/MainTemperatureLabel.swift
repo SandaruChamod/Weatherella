@@ -8,14 +8,14 @@
 import SwiftUI
 
 /**
-    Main Temperature Label
+ Main Temperature Label
  */
 struct MainTemperatureLabel: View {
     @EnvironmentObject private var appWeatherData: AppWeatherData
-
+    
     var body: some View {
         let current  = appWeatherData.forecastInfo?.currentWeatherInfo
-
+        
         Text("\(Int(current?.main.temp ?? 0))ºC")
             .font(.system(size: 30))
             .foregroundColor(.black)

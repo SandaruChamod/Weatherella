@@ -8,7 +8,7 @@
 import SwiftUI
 
 /**
-    Home View
+ Home View
  */
 struct HomeView: View {
     @EnvironmentObject private var appWeatherData: AppWeatherData
@@ -27,7 +27,7 @@ struct HomeView: View {
             Image("background2")
                 .resizable()
                 .ignoresSafeArea(.all)
-
+            
             VStack (spacing: 30) {
                 HStack {
                     Spacer()
@@ -45,11 +45,12 @@ struct HomeView: View {
                 VStack (spacing: 10) {
                     LocationPanel()
                     
-                    Text("\(currentDate.formatted(date: .abbreviated, time: .shortened))")
-                        .padding()
-                        .font(.largeTitle)
-                        .foregroundColor(.black)
-                        .shadow(color: .black, radius: 1)
+                    Text(Date(timeIntervalSince1970: TimeInterval(((Int)(current?.dt ?? 0))))
+                        .formatted(.dateTime.year().hour().month().day()))
+                    .padding()
+                    .font(.largeTitle)
+                    .foregroundColor(.black)
+                    .shadow(color: .black, radius: 1)
                 }
                 
                 Spacer()

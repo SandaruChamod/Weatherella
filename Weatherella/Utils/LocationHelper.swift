@@ -9,8 +9,8 @@ import Foundation
 import CoreLocation
 
 /**
-    Responsible for return location as a string from latitude and longitude
-    Returns String
+ Responsible for return location as a string from latitude and longitude
+ Returns String
  */
 func getLocFromLatLong(lat: Double, lon: Double) async -> String {
     var locationString: String
@@ -38,7 +38,7 @@ func getLocFromLatLong(lat: Double, lon: Double) async -> String {
     } catch {
         print("Reverse geodecoe fail: \(error.localizedDescription)")
         locationString = "No City, No Country"
-       
+        
         return locationString
     }
     

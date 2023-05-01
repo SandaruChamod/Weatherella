@@ -8,7 +8,7 @@
 import Foundation
 
 /**
-    Pollution Data Map
+ Pollution Data Map
  */
 struct PollutionDataMap {
     let id = UUID()
@@ -17,7 +17,7 @@ struct PollutionDataMap {
 }
 
 /**
-    Frame Option
+ Frame Option
  */
 struct FrameOption {
     let width: Double
@@ -26,7 +26,7 @@ struct FrameOption {
 
 
 /**
-    Temperature Data Model
+ Temperature Data Model
  */
 struct TemperatureDataModel {
     let min_temp: Int
@@ -35,7 +35,7 @@ struct TemperatureDataModel {
 }
 
 /**
-    Temperature Label  Model
+ Temperature Label  Model
  */
 struct TemperatureLabelModel {
     let label: String
@@ -44,7 +44,7 @@ struct TemperatureLabelModel {
 }
 
 /**
-    Temperature Measurement
+ Temperature Measurement
  */
 enum TempMeasurement : String {
     case celsius = "ºC"

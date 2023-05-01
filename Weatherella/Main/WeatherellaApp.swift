@@ -8,7 +8,7 @@
 import SwiftUI
 
 /**
-    Weatherella App
+ Weatherella App
  */
 @main
 struct WeatherellaApp: App {
@@ -18,6 +18,7 @@ struct WeatherellaApp: App {
     var body: some Scene {
         WindowGroup {
             WeatherellaTabView()
-                .environmentObject(appWeatherData)        }
+            .environmentObject(appWeatherData)
+        }
     }
 }

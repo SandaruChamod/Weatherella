@@ -8,21 +8,21 @@
 import Foundation
 
 /**
-    Pollution Info
+ Pollution Info
  */
 struct PollutionInfo: Codable {
     let list: [Pollution]
 }
 
 /**
-    Pollution
+ Pollution
  */
 struct Pollution: Codable {
     let components: PollutionComponents
 }
 
 /**
-    Pollution Components
+ Pollution Components
  */
 struct PollutionComponents: Codable {
     let so2: Double

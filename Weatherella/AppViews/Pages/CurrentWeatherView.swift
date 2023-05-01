@@ -8,11 +8,11 @@
 import SwiftUI
 
 /**
-    Current Weather View
+ Current Weather View
  */
 struct CurrentWeatherView: View {
     @EnvironmentObject private var appWeatherData: AppWeatherData
-
+    
     var body: some View {
         let current  = appWeatherData.forecastInfo?.currentWeatherInfo
         
@@ -21,7 +21,7 @@ struct CurrentWeatherView: View {
                 .resizable()
             VStack (spacing: 40) {
                 LocationPanel()
-                                
+                
                 MainTemperatureLabel()
                 
                 WeatherStatusPanel(frameOptions: FrameOption(width: 80, height: 80))

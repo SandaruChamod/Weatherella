@@ -8,7 +8,7 @@
 import Foundation
 
 /**
-    Current Weather Info
+ Current Weather Info
  */
 struct CurrentWeatherInfo: Codable {
     let name: String
@@ -22,7 +22,7 @@ struct CurrentWeatherInfo: Codable {
 }
 
 /**
-    Day Times
+ Day Times
  */
 struct DayTimes: Codable {
     let sunrise: Int
@@ -30,7 +30,7 @@ struct DayTimes: Codable {
 }
 
 /**
-    Coordinates
+ Coordinates
  */
 struct Coordinates: Codable {
     let lon: Double
@@ -38,7 +38,7 @@ struct Coordinates: Codable {
 }
 
 /**
-    Main
+ Main
  */
 struct Main: Codable {
     let temp: Double
@@ -49,7 +49,7 @@ struct Main: Codable {
 }
 
 /**
-    Weather
+ Weather
  */
 struct Weather: Codable {
     let id: Int
@@ -64,7 +64,7 @@ struct Weather: Codable {
 }
 
 /**
-    Wind
+ Wind
  */
 struct Wind: Codable {
     let speed: Double
@@ -72,14 +72,14 @@ struct Wind: Codable {
 }
 
 /**
-    Clouds
+ Clouds
  */
 struct Clouds: Codable {
     let all: Int
 }
 
 /**
-    Weather Main
+ Weather Main
  */
 enum WeatherMain: String, Codable {
     case clear = "Clear"
@@ -100,7 +100,7 @@ enum WeatherMain: String, Codable {
 }
 
 /**
-    Weather Description
+ Weather Description
  */
 enum WeatherDescription: String, Codable {
     case brokenClouds = "broken clouds"

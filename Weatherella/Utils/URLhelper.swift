@@ -8,8 +8,8 @@
 import Foundation
 
 /**
-    Responsible to encode given URL string.
-    Returns String
+ Responsible to encode given URL string.
+ Returns String
  */
 func urlEncodeString(stringValue: String) -> String {
     return stringValue.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!

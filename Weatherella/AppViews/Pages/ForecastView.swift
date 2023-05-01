@@ -8,11 +8,11 @@
 import SwiftUI
 
 /**
-    Forecast View
+ Forecast View
  */
 struct ForecastView: View {
     @EnvironmentObject private var appWeatherData: AppWeatherData
-
+    
     var body: some View {
         let forecast = appWeatherData.forecastInfo?.forecastWeatherInfo
         let forecastList = forecast?.list

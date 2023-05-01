@@ -8,12 +8,12 @@
 import SwiftUI
 
 /**
-    Pollution View
+ Pollution View
  */
 struct PollutionView: View {
     
     @EnvironmentObject private var appWeatherData: AppWeatherData
-
+    
     var body: some View {
         let formattedPollutionData = appWeatherData.getFormattedPollutionData()
         

@@ -8,7 +8,7 @@
 import Foundation
 
 /**
-    Weather API
+ Weather API
  */
 enum APIConfigs: String {
     case currentWeatherAPI = "weather"

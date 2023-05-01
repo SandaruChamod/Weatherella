@@ -8,7 +8,7 @@
 import SwiftUI
 
 /**
-    Country Search View
+ Country Search View
  */
 struct CountrySearchSheet: View {
     @Environment(\.dismiss) private var dismiss
@@ -25,14 +25,14 @@ struct CountrySearchSheet: View {
                     .textFieldStyle(.roundedBorder)
                     .padding(.horizontal)
                     .disableAutocorrection(true)
-                .tint(.black)
-                .buttonStyle(.bordered)
+                    .tint(.black)
+                    .buttonStyle(.bordered)
             }
         }
     }
     
     /**
-        Responsible to trigger on city input commit event.
+     Responsible to trigger on city input commit event.
      */
     func onCityInputCommit() -> Void {
         Task {
