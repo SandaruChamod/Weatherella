@@ -19,29 +19,31 @@ struct CurrentWeatherView: View {
         ZStack {
             Image("background2")
                 .resizable()
-            VStack (spacing: 30) {
+            VStack (spacing: 40) {
                 LocationPanel()
                                 
-                Text("\(current?.main.temp.convertToSingleDecimal() ?? "")ºC")
-                    .font(.title2)
-                    .foregroundColor(.black)
-                    .shadow(color: .black, radius: 0.5)
+                MainTemperatureLabel()
                 
-                WeatherStatusPanel(frameOptions: FrameOption(width: 60, height: 60))
+                WeatherStatusPanel(frameOptions: FrameOption(width: 80, height: 80))
                 
                 TemperaturePanel()
+                    .bold()
                 
-                VStack (spacing: 30) {
+                VStack (spacing: 50) {
                     HStack {
                         Text("Wind Speed: \((Int)(current?.wind.speed ?? 0))m/s")
+                            .bold()
                         Spacer()
                         Text("Direction: \(convertDegToCardinal(deg: current?.wind.deg ?? 0))")
+                            .bold()
                     }.padding(.horizontal)
                     
                     HStack {
                         Text("Humidity: \((Int)(current?.main.humidity ?? 0))%")
+                            .bold()
                         Spacer()
-                        Text("Humidity: \((Int)(current?.main.pressure ?? 0))hPg")
+                        Text("Presure: \((Int)(current?.main.pressure ?? 0))hPg")
+                            .bold()
                     }.padding(.horizontal)
                 }
                 
@@ -53,6 +55,7 @@ struct CurrentWeatherView: View {
                                 .symbolRenderingMode(.multicolor)
                             Text(Date(timeIntervalSince1970: TimeInterval(((Int)(current?.sys.sunset ?? 0))))
                                 .formatted(.dateTime.hour().minute().attributed))
+                            .bold()
                         }
                         Spacer()
                         HStack {
@@ -60,6 +63,7 @@ struct CurrentWeatherView: View {
                                 .symbolRenderingMode(.multicolor)
                             Text(Date(timeIntervalSince1970: TimeInterval(((Int)(current?.sys.sunrise ?? 0))))
                                 .formatted(.dateTime.hour().minute().attributed))
+                            .bold()
                         }
                         Spacer()
                     }
@@ -67,5 +71,5 @@ struct CurrentWeatherView: View {
             }
         }
         .ignoresSafeArea()
-        }
+    }
 }

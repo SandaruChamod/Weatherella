@@ -14,6 +14,6 @@ struct TemperatureLabel: View {
     @State var tempLabelModel: TemperatureLabelModel
     
     var body: some View {
-        Text("\(tempLabelModel.label) \((tempLabelModel.temp))ºC")
+        Text("\(tempLabelModel.label) \(tempLabelModel.temp)ºC")
     }
 }

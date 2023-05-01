@@ -28,8 +28,7 @@ struct HomeView: View {
                 .resizable()
                 .ignoresSafeArea(.all)
 
-            VStack {
-                Spacer()
+            VStack (spacing: 30) {
                 HStack {
                     Spacer()
                     Button {
@@ -41,37 +40,33 @@ struct HomeView: View {
                     }
                     .padding()
                     Spacer()
+                }.padding(.vertical, 100)
+                
+                VStack (spacing: 10) {
+                    LocationPanel()
+                    
+                    Text("\(currentDate.formatted(date: .abbreviated, time: .shortened))")
+                        .padding()
+                        .font(.largeTitle)
+                        .foregroundColor(.black)
+                        .shadow(color: .black, radius: 1)
                 }
-                
-                LocationPanel()
-                
-                Text("\(currentDate.formatted(date: .abbreviated, time: .shortened))")
-                .padding()
-                .font(.largeTitle)
-                .foregroundColor(.black)
-                .shadow(color: .black, radius: 1)
                 
                 Spacer()
                 
-                Text("Temp: \(current?.main.temp.convertToSingleDecimal() ?? "")ºC")
-                    .padding()
+                TemperatureLabel(tempLabelModel: TemperatureLabelModel(label: "Temp:", temp: Int(current?.main.temp ?? 0), measurement: .celsius))
                     .font(.title2)
-                    .foregroundColor(.black)
                     .shadow(color: .black, radius: 0.5)
                 
                 Text("Humidity:  \(current?.main.humidity ?? 0)%")
-                    .padding()
                     .font(.title2)
-                    .foregroundColor(.black)
                     .shadow(color: .black, radius: 0.5)
                 
                 Text("Pressure:  \(current?.main.pressure ?? 0) hPa")
-                    .padding()
                     .font(.title2)
-                    .foregroundColor(.black)
                     .shadow(color: .black, radius: 0.5)
                 
-                WeatherStatusPanel(frameOptions: FrameOption(width: 60, height: 60))
+                WeatherStatusPanel(frameOptions: FrameOption(width: 80, height: 80))
                 
                 Spacer()
             }

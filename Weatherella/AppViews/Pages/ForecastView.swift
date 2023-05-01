@@ -43,7 +43,7 @@ struct ForecastView: View {
                                 Text("\(forecast.dt.getDateFromUTCTimestamp().formatted(Date.FormatStyle().weekday(.twoDigits)))")
                             }
                         }
-                        Text("\(forecast.main.temp_min.convertToSingleDecimal())ºC / \(forecast.main.temp_max.convertToSingleDecimal())ºC")
+                        Text("\(Int(forecast.main.temp_min ))ºC / \(Int(forecast.main.temp_max))ºC")
                         Spacer()
                     }
                 }

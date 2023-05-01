@@ -25,4 +25,13 @@ extension Double {
         let string = String(format: "%.1f", self)
         return string
     }
+    
+    /**
+        Responsible to return given decimal value with two decimal points.
+        Returns String
+     */
+    func convertToTwoDecimals() -> String {
+        let string = String(format: "%.2f", self)
+        return string
+    }
 }

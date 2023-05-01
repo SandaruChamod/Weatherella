@@ -15,7 +15,6 @@ struct PollutionView: View {
     @EnvironmentObject private var appWeatherData: AppWeatherData
 
     var body: some View {
-        
         let formattedPollutionData = appWeatherData.getFormattedPollutionData()
         let current  = appWeatherData.forecastInfo?.currentWeatherInfo
         
@@ -27,14 +26,12 @@ struct PollutionView: View {
             VStack (spacing: 30) {
                 LocationPanel()
                 
-                Text("\(current?.main.temp.convertToSingleDecimal() ?? "")ºC")
-                    .font(.title2)
-                    .foregroundColor(.black)
-                    .shadow(color: .black, radius: 0.5)
+                MainTemperatureLabel()
                 
-                WeatherStatusPanel(frameOptions: FrameOption(width: 60, height: 60))
+                WeatherStatusPanel(frameOptions: FrameOption(width: 80, height: 80))
                 
                 TemperaturePanel()
+                    .shadow(color: .black, radius: 1)
                 
                 HStack {
                     Spacer()
@@ -48,7 +45,7 @@ struct PollutionView: View {
                     ForEach(formattedPollutionData, id: \.self.id) { pollutionData in
                         VStack {
                             Image(pollutionData.image)
-                            Text("\(pollutionData.value.convertToSingleDecimal())")
+                            Text("\(pollutionData.value.convertToTwoDecimals())")
                         }
                     }
                 }

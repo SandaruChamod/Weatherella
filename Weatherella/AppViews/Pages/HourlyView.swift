@@ -41,7 +41,7 @@ struct HourlyView: View {
                         } placeholder: {
                             ProgressView()
                         }
-                        Text("\(forecast.main.temp.convertToSingleDecimal())ºC")
+                        TemperatureLabel(tempLabelModel: TemperatureLabelModel(label: "", temp: Int(forecast.main.temp), measurement: .celsius))
                         Spacer()
                         Text("\(forecast.weather.first?.main.rawValue ?? "")")
                         Spacer()

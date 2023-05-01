@@ -15,19 +15,20 @@ struct TemperaturePanel: View {
     
     var body: some View {
         let current  = appWeatherData.forecastInfo?.currentWeatherInfo
-        let min: String = Double((current?.main.temp_min ?? 0)).convertToSingleDecimal()
-        let max: String = Double((current?.main.temp_max ?? 0)).convertToSingleDecimal()
-        let feelsLike: String = Double((current?.main.temp ?? 0)).convertToSingleDecimal()
+        let min: Int = Int(current?.main.temp_min ?? 0)
+        let max: Int = Int((current?.main.temp_max ?? 0))
+        let feelsLike: Int = Int(current?.main.temp ?? 0)
 
-        HStack {
-            Spacer()
-            TemperatureLabel(tempLabelModel: TemperatureLabelModel(label: "H:", temp: min, measurement: .celsius))
-            Spacer()
-            TemperatureLabel(tempLabelModel: TemperatureLabelModel(label: "Low:", temp: max, measurement: .celsius))
-            Spacer()
+        VStack (spacing: 30) {
+            HStack {
+                Spacer()
+                TemperatureLabel(tempLabelModel: TemperatureLabelModel(label: "H:", temp: min, measurement: .celsius))
+                Spacer()
+                TemperatureLabel(tempLabelModel: TemperatureLabelModel(label: "Low:", temp: max, measurement: .celsius))
+                Spacer()
+            }
+            
+            Text("Feels Like: \(feelsLike)ºC")
         }
-
-        Text("Feels Like: \(feelsLike)ºC")
-            .foregroundColor(.black)
     }
 }
