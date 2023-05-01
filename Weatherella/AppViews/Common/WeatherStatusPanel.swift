@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+    Weather Status Panel
+ */
 struct WeatherStatusPanel: View {
     @EnvironmentObject private var appWeatherData: AppWeatherData
     @State var frameOptions: FrameOption

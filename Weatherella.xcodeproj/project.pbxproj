@@ -81,6 +81,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C4A11A329FF79E000EBA330 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3CCD25D629E720A4002CA6F8 /* london-air-pollution.json */,
+				3CCD25D329E72066002CA6F8 /* london-current-weather.json */,
+				3CCD25D429E7208C002CA6F8 /* london-hourly-summary.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		3CB85CC529ECEA580040DF81 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,11 +121,12 @@
 		3CCD25C229E71FD0002CA6F8 /* Weatherella */ = {
 			isa = PBXGroup;
 			children = (
-				3CCD25EB29E72496002CA6F8 /* Views */,
-				3CCD25E829E72368002CA6F8 /* WeatherAPI */,
-				3CCD25E129E722AE002CA6F8 /* Models */,
-				3CCD25DE29E721B5002CA6F8 /* App */,
-				3CCD25D229E7202C002CA6F8 /* Helpers */,
+				3C4A11A329FF79E000EBA330 /* Resources */,
+				3CCD25EB29E72496002CA6F8 /* AppViews */,
+				3CCD25E829E72368002CA6F8 /* Services */,
+				3CCD25E129E722AE002CA6F8 /* AppModels */,
+				3CCD25DE29E721B5002CA6F8 /* Main */,
+				3CCD25D229E7202C002CA6F8 /* Utils */,
 				3CCD25C729E71FD0002CA6F8 /* Assets.xcassets */,
 				3CCD25C929E71FD1002CA6F8 /* Weatherella.entitlements */,
 				3CCD25CA29E71FD1002CA6F8 /* Preview Content */,
@@ -131,31 +142,28 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		3CCD25D229E7202C002CA6F8 /* Helpers */ = {
+		3CCD25D229E7202C002CA6F8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				3C36707B29E98CF9006C673D /* WindDirHelper.swift */,
-				3CCD25D629E720A4002CA6F8 /* london-air-pollution.json */,
-				3CCD25D329E72066002CA6F8 /* london-current-weather.json */,
-				3CCD25D429E7208C002CA6F8 /* london-hourly-summary.json */,
 				3CCD25D829E720B6002CA6F8 /* Keys.swift */,
 				3CCD25DA29E72148002CA6F8 /* LocationHelper.swift */,
 				3CCD25DC29E7219B002CA6F8 /* Double+Extensions.swift */,
 				3CB85CD229ED29650040DF81 /* Int+Extensions.swift */,
 				3CE77B0D29FA503C002B0CD2 /* URLhelper.swift */,
 			);
-			path = Helpers;
+			path = Utils;
 			sourceTree = "<group>";
 		};
-		3CCD25DE29E721B5002CA6F8 /* App */ = {
+		3CCD25DE29E721B5002CA6F8 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				3CCD25C329E71FD0002CA6F8 /* WeatherellaApp.swift */,
 			);
-			path = App;
+			path = Main;
 			sourceTree = "<group>";
 		};
-		3CCD25E129E722AE002CA6F8 /* Models */ = {
+		3CCD25E129E722AE002CA6F8 /* AppModels */ = {
 			isa = PBXGroup;
 			children = (
 				3CCD25E229E722CD002CA6F8 /* CurrentWeatherInfo.swift */,
@@ -163,24 +171,24 @@
 				3CCD25E629E7234E002CA6F8 /* PollutionInfo.swift */,
 				3CB85CC829ECEAEE0040DF81 /* ViewModels.swift */,
 			);
-			path = Models;
+			path = AppModels;
 			sourceTree = "<group>";
 		};
-		3CCD25E829E72368002CA6F8 /* WeatherAPI */ = {
+		3CCD25E829E72368002CA6F8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				3CCD25E929E72380002CA6F8 /* AppWeatherData.swift */,
 			);
-			path = WeatherAPI;
+			path = Services;
 			sourceTree = "<group>";
 		};
-		3CCD25EB29E72496002CA6F8 /* Views */ = {
+		3CCD25EB29E72496002CA6F8 /* AppViews */ = {
 			isa = PBXGroup;
 			children = (
 				3CB85CC529ECEA580040DF81 /* Common */,
 				3CCD25EC29E724A4002CA6F8 /* Pages */,
 			);
-			path = Views;
+			path = AppViews;
 			sourceTree = "<group>";
 		};
 		3CCD25EC29E724A4002CA6F8 /* Pages */ = {

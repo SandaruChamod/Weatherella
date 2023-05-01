@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+    Hourly View
+ */
 struct HourlyView: View {
     @EnvironmentObject private var appWeatherData: AppWeatherData
     

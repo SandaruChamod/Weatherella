@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+    Location Panel
+ */
 struct LocationPanel: View {
     @EnvironmentObject private var appWeatherData: AppWeatherData
     

@@ -7,8 +7,11 @@
 
 import SwiftUI
 
+/**
+    Weatherella App
+ */
 @main
-struct ForecastApp: App {
+struct WeatherellaApp: App {
     
     @StateObject private var appWeatherData = AppWeatherData()
     

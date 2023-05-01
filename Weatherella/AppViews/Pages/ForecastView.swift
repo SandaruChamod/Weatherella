@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+    Forecast View
+ */
 struct ForecastView: View {
     @EnvironmentObject private var appWeatherData: AppWeatherData
 

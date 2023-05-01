@@ -8,6 +8,10 @@
 import Foundation
 
 extension Int {
+    /**
+        Responsible to return given value with one decimal point.
+        Returns String
+     */
     func convertToSingleDecimal() -> String {
         return Double(self).convertToSingleDecimal()
     }

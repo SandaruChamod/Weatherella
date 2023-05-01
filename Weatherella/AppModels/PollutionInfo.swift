@@ -7,14 +7,23 @@
 
 import Foundation
 
+/**
+    Pollution Info
+ */
 struct PollutionInfo: Codable {
     let list: [Pollution]
 }
 
+/**
+    Pollution
+ */
 struct Pollution: Codable {
     let components: PollutionComponents
 }
 
+/**
+    Pollution Components
+ */
 struct PollutionComponents: Codable {
     let so2: Double
     let no2: Double

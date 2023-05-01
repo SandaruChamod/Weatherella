@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+    Country Search View
+ */
 struct CountrySearchSheet: View {
     @State var cityTextInput: String =  ""
     @Environment(\.dismiss) private var dismiss

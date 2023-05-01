@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+    Weatherella Tab View
+ */
 struct WeatherellaTabView: View {
     var body: some View {
         TabView {

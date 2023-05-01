@@ -7,6 +7,9 @@
 
 import Foundation
 
+/**
+    Forecast Weather Model
+ */
 struct ForecastWeatherModel: Identifiable {
     let id = UUID()
     let currentWeatherInfo: CurrentWeatherInfo
@@ -14,11 +17,17 @@ struct ForecastWeatherModel: Identifiable {
     let pollutionInfo: PollutionInfo
 }
 
+/**
+    Forecast Weather Info
+ */
 struct ForecastWeatherInfo: Codable {
     let list: [ForecastWeather]
     let city: City
 }
 
+/**
+    Forecast Weather
+ */
 struct ForecastWeather: Codable, Identifiable {
     let id = UUID()
     let dt: Double
@@ -27,6 +36,9 @@ struct ForecastWeather: Codable, Identifiable {
     let clouds: Clouds
 }
 
+/**
+    City
+ */
 struct City: Codable {
     let name: String
     let country: String

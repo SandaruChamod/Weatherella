@@ -7,8 +7,10 @@
 
 import SwiftUI
 
+/**
+    Home View
+ */
 struct HomeView: View {
-    
     @EnvironmentObject private var appWeatherData: AppWeatherData
     @State var showSearchView: Bool = false
     @State  var userLocationData: String = ""

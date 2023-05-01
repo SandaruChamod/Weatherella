@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+    Temperature Label
+ */
 struct TemperatureLabel: View {
     @State var tempLabelModel: TemperatureLabelModel
     
