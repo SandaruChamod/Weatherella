@@ -27,23 +27,23 @@ struct CurrentWeatherView: View {
                 WeatherStatusPanel(frameOptions: FrameOption(width: 80, height: 80))
                 
                 TemperaturePanel()
-                    .bold()
-                
+                    .shadow(color: .black, radius: 0.5)
+
                 VStack (spacing: 50) {
                     HStack {
                         Text("Wind Speed: \((Int)(current?.wind.speed ?? 0))m/s")
-                            .bold()
+                            .shadow(color: .black, radius: 0.5)
                         Spacer()
                         Text("Direction: \(convertDegToCardinal(deg: current?.wind.deg ?? 0))")
-                            .bold()
+                            .shadow(color: .black, radius: 0.5)
                     }.padding(.horizontal)
                     
                     HStack {
                         Text("Humidity: \((Int)(current?.main.humidity ?? 0))%")
-                            .bold()
+                            .shadow(color: .black, radius: 0.5)
                         Spacer()
-                        Text("Presure: \((Int)(current?.main.pressure ?? 0))hPg")
-                            .bold()
+                        Text("Presure: \((Int)(current?.main.pressure ?? 0)) hPg")
+                            .shadow(color: .black, radius: 0.5)
                     }.padding(.horizontal)
                 }
                 
@@ -55,7 +55,7 @@ struct CurrentWeatherView: View {
                                 .symbolRenderingMode(.multicolor)
                             Text(Date(timeIntervalSince1970: TimeInterval(((Int)(current?.sys.sunset ?? 0))))
                                 .formatted(.dateTime.hour().minute().attributed))
-                            .bold()
+                                .shadow(color: .black, radius: 0.5)
                         }
                         Spacer()
                         HStack {
@@ -63,7 +63,7 @@ struct CurrentWeatherView: View {
                                 .symbolRenderingMode(.multicolor)
                             Text(Date(timeIntervalSince1970: TimeInterval(((Int)(current?.sys.sunrise ?? 0))))
                                 .formatted(.dateTime.hour().minute().attributed))
-                            .bold()
+                            .shadow(color: .black, radius: 0.5)
                         }
                         Spacer()
                     }

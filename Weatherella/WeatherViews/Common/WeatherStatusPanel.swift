@@ -26,7 +26,7 @@ struct WeatherStatusPanel: View {
                 ProgressView()
             }
             Text(current?.weather.first?.main.rawValue ?? "")
-                .bold()
+                .shadow(color: .black, radius: 0.5)
         }
     }
 }

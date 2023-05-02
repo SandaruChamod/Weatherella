@@ -38,7 +38,7 @@ struct ForecastView: View {
                         }
                         VStack {
                             Text("\(forecast.weather.first?.main.rawValue ?? "")")
-                            HStack (spacing: 5) {
+                            HStack (spacing: 3) {
                                 Text("\(forecast.dt.getDateFromUTCTimestamp().formatted(Date.FormatStyle().weekday(.wide)))")
                                 Text("\(forecast.dt.getDateFromUTCTimestamp().formatted(Date.FormatStyle().weekday(.twoDigits)))")
                             }

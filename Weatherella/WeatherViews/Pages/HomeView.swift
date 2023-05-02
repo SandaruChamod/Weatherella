@@ -49,7 +49,7 @@ struct HomeView: View {
                     .padding()
                     .font(.largeTitle)
                     .foregroundColor(.black)
-                    .shadow(color: .black, radius: 1)
+                    .shadow(color: .black, radius: 0.5)
                 }
                 
                 Spacer()

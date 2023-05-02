@@ -30,7 +30,7 @@ struct PollutionView: View {
                 WeatherStatusPanel(frameOptions: FrameOption(width: 80, height: 80))
                 
                 TemperaturePanel()
-                    .shadow(color: .black, radius: 1)
+                    .shadow(color: .black, radius: 0.5)
                 
                 HStack {
                     Spacer()
