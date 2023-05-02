@@ -117,7 +117,7 @@
 				3CE1DB292A01334000BC7EAE /* AirModels */,
 				3CE1DB282A01333000BC7EAE /* AirViews */,
 				3CCD25EB29E72496002CA6F8 /* WeatherViews */,
-				3CCD25E129E722AE002CA6F8 /* WeatherModel */,
+				3CCD25E129E722AE002CA6F8 /* WeatherModels */,
 				3CCD25DE29E721B5002CA6F8 /* Main */,
 				3CCD25D229E7202C002CA6F8 /* Helpers */,
 				3CCD25C729E71FD0002CA6F8 /* Assets.xcassets */,
@@ -156,7 +156,7 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		3CCD25E129E722AE002CA6F8 /* WeatherModel */ = {
+		3CCD25E129E722AE002CA6F8 /* WeatherModels */ = {
 			isa = PBXGroup;
 			children = (
 				3CCD25E929E72380002CA6F8 /* AppWeatherData.swift */,
@@ -166,7 +166,7 @@
 				3CCD25E429E722F2002CA6F8 /* WeatherCodables.swift */,
 				3CB85CC829ECEAEE0040DF81 /* ViewModels.swift */,
 			);
-			path = WeatherModel;
+			path = WeatherModels;
 			sourceTree = "<group>";
 		};
 		3CCD25EB29E72496002CA6F8 /* WeatherViews */ = {
