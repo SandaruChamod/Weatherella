@@ -21,7 +21,6 @@ struct HomeView: View {
     
     var body: some View {
         let current  = appWeatherData.forecastInfo?.currentWeatherInfo
-        let currentDate = current?.dt.getDateFromUTCTimestamp() ?? Date()
         
         ZStack {
             Image("background2")
