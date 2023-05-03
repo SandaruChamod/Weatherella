@@ -18,70 +18,77 @@ struct HomeView: View {
     @State private var isLocationChanging = false
     @State var showErrorMessage = false
     @State var errorMessage = "Couldn't find the location"
+    @State  var userLocation: String = ""
     
     var body: some View {
-        let current  = appWeatherData.forecastInfo?.currentWeatherInfo
+        let weatherInfo  = appWeatherData.appData?.weatherInfo
+        let current  = weatherInfo?.current
         
-        ZStack {
-            Image("background2")
-                .resizable()
-                .ignoresSafeArea(.all)
-            
-            VStack (spacing: 30) {
-                HStack {
-                    Spacer()
-                    Button {
-                        self.isLocationChanging.toggle()
-                    } label: {
-                        Text("Change Location")
-                            .bold()
-                            .font(.system(size: 30))
-                    }
-                    .padding()
-                    Spacer()
-                }.padding(.vertical, 100)
+        ScrollView {
+            ZStack {
+                Image("background2")
+                    .resizable()
+                    .ignoresSafeArea(.container)
                 
-                VStack (spacing: 10) {
-                    LocationPanel()
+                VStack (spacing: 30) {
+                    HStack {
+                        Spacer()
+                        Button {
+                            self.isLocationChanging.toggle()
+                        } label: {
+                            Text("Change Location")
+                                .bold()
+                                .font(.system(size: 30))
+                        }
+                        .padding()
+                        Spacer()
+                    }.padding(.vertical, 80)
                     
-                    Text(Date(timeIntervalSince1970: TimeInterval(((Int)(current?.dt ?? 0))))
-                        .formatted(.dateTime.year().hour().month().day()))
-                    .padding()
-                    .font(.largeTitle)
-                    .foregroundColor(.black)
-                    .shadow(color: .black, radius: 0.5)
+                    VStack (spacing: 10) {
+                        LocationPanel()
+                        
+                        Text(Date(timeIntervalSince1970: TimeInterval(current?.dt ?? 0))
+                            .formatted(.dateTime.year().hour().month().day()))
+                        .padding()
+                        .font(.largeTitle)
+                        .foregroundColor(.black)
+                        .shadow(color: .black, radius: 0.5)
+                    }
+                    
+                    Spacer()
+                    
+                    TemperatureLabel(tempLabelModel: TemperatureLabelModel(label: "Temp:", temp: Int(current?.temp ?? 0), measurement: .celsius))
+                        .font(.title2)
+                        .shadow(color: .black, radius: 0.5)
+                    
+                    Text("Humidity:  \(current?.humidity ?? 0)%")
+                        .font(.title2)
+                        .shadow(color: .black, radius: 0.5)
+                    
+                    Text("Pressure:  \(current?.pressure ?? 0) hPa")
+                        .font(.title2)
+                        .shadow(color: .black, radius: 0.5)
+                    
+                    Spacer()
+                    
+                    WeatherStatusPanel(frameOptions: FrameOption(width: 80, height: 80))
+                    
+                    Spacer()
                 }
-                
-                Spacer()
-                
-                TemperatureLabel(tempLabelModel: TemperatureLabelModel(label: "Temp:", temp: Int(current?.main.temp ?? 0), measurement: .celsius))
-                    .font(.title2)
-                    .shadow(color: .black, radius: 0.5)
-                
-                Text("Humidity:  \(current?.main.humidity ?? 0)%")
-                    .font(.title2)
-                    .shadow(color: .black, radius: 0.5)
-                
-                Text("Pressure:  \(current?.main.pressure ?? 0) hPa")
-                    .font(.title2)
-                    .shadow(color: .black, radius: 0.5)
-                
-                WeatherStatusPanel(frameOptions: FrameOption(width: 80, height: 80))
-                
-                Spacer()
-            }
-            .onAppear {
-                Task.init {
-                    self.userLocationData = ""
+                .onAppear {
+                    Task.init {
+                        self.userLocation = await getLocFromLatLong(lat: (weatherInfo!.lat), lon: (weatherInfo!.lon))
+                        self.appWeatherData.city = userLocation
+                    }
                 }
             }
+            .sheet(isPresented: $isLocationChanging) {
+                CountrySearchSheet(showErrorMessage: $showErrorMessage, errorMessage: $errorMessage)
+            }
+            .alert(errorMessage, isPresented: $showErrorMessage) {
+                Label("Search", systemImage: "star")
+            }
         }
-        .ignoresSafeArea()
-        .sheet(isPresented: $isLocationChanging) {
-            CountrySearchSheet(showErrorMessage: $showErrorMessage, errorMessage: $errorMessage)
-        }
-        .alert(errorMessage, isPresented: $showErrorMessage) {
-            Label("Search", systemImage: "star")
-        }
+        .edgesIgnoringSafeArea(.all)
     }
 }

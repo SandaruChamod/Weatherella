@@ -35,6 +35,10 @@ struct WeatherellaTabView: View {
                 }
         }
         .tint(.blue)
+        .frame(
+            width: UIScreen.main.bounds.width,
+            height: UIScreen.main.bounds.height
+        )
     }
 }
 

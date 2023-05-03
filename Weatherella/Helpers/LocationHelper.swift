@@ -23,16 +23,12 @@ func getLocFromLatLong(lat: Double, lon: Double) async -> String {
     do {
         placemarks = try await ceo.reverseGeocodeLocation(loc)
         if placemarks.count > 0 {
-            
-            
             if (!placemarks[0].name!.isEmpty) {
-                
-                locationString = placemarks[0].name!
+                locationString = "\(placemarks[0].name!), \(placemarks[0].locality!), \(placemarks[0].country!)"
                 
             } else {
                 locationString = (placemarks[0].locality ?? "No City")
             }
-            
             return locationString
         }
     } catch {

@@ -15,4 +15,13 @@ extension Int {
     func convertToSingleDecimal() -> String {
         return Double(self).convertToSingleDecimal()
     }
+    
+    /**
+     Responsible to return date object from UTC timestamp.
+     Returns Date
+     */
+    func getDateFromUTCTimestamp() -> Date {
+        let date = Date(timeIntervalSince1970: TimeInterval(self))
+        return date
+    }
 }

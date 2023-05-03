@@ -34,4 +34,12 @@ extension Double {
         let string = String(format: "%.2f", self)
         return string
     }
+    
+    /**
+     Responsible to return date object from UTC timestamp.
+     Returns Date
+     */
+    func toInt() -> Int {
+        return Int(self)
+    }
 }

@@ -14,41 +14,42 @@ struct HourlyView: View {
     @EnvironmentObject private var appWeatherData: AppWeatherData
     
     var body: some View {
-        let forecast = appWeatherData.forecastInfo?.forecastWeatherInfo
-        let forecastList = forecast?.list
+        let hourlyList = appWeatherData.appData?.weatherInfo.hourly ?? []
         
         ZStack {
             Image("background")
                 .resizable()
-                .ignoresSafeArea(.all)
             
             VStack {
                 LocationPanel()
-                
-                List(forecastList ?? []) { forecast in
-                    HStack {
-                        Spacer()
-                        VStack (spacing: 0) {
-                            Text("\(forecast.dt.getDateFromUTCTimestamp().formatted(.dateTime.hour(.twoDigits(amPM: .abbreviated)).attributed))")
-                            Text("\(forecast.dt.getDateFromUTCTimestamp().formatted(.dateTime.weekday(.abbreviated)))")
+                List {
+                    ForEach(hourlyList) { summary in
+                        HStack {
+                            VStack (spacing: 0) {
+                                Text("\((Date(timeIntervalSince1970: TimeInterval(summary.dt)).formatted(.dateTime.hour(.twoDigits(amPM: .wide)))))")
+                                Text("\((Date(timeIntervalSince1970: TimeInterval(summary.dt)).formatted(.dateTime.weekday())))")
+                            }
+                            Spacer()
+                            AsyncImage(url: summary.weather.first?.iconImageURL) {
+                                image in
+                                image
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                            } placeholder: {
+                                ProgressView()
+                            }
+                            TemperatureLabel(tempLabelModel: TemperatureLabelModel(label: "", temp: summary.temp.toInt(), measurement: .celsius))
+                            Spacer()
+                            Text("\(summary.weather.first?.main.rawValue ?? "")")
+                                .listRowSeparatorTint(.red)
                         }
-                        Spacer()
-                        AsyncImage(url: forecast.weather.first?.iconImageURL) {
-                            image in
-                            image
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                        } placeholder: {
-                            ProgressView()
-                        }
-                        TemperatureLabel(tempLabelModel: TemperatureLabelModel(label: "", temp: Int(forecast.main.temp), measurement: .celsius))
-                        Spacer()
-                        Text("\(forecast.weather.first?.main.rawValue ?? "")")
-                        Spacer()
+                        .padding(.horizontal, 20)
                     }
                 }
                 .opacity(0.8)
             }
+            .padding(.top, 70)
         }
+        .edgesIgnoringSafeArea(.all)
     }
 }

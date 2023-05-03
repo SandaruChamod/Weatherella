@@ -11,12 +11,12 @@ import SwiftUI
  App Weather Data
  */
 class AppWeatherData: ObservableObject {
-    @Published var forecastInfo: ForecastWeatherModel?
+    @Published var appData: ForecastWeatherModel?
     @Published var city = ""
     
     init() {
         // Load initial whether info from JSON file.
-        forecastInfo = getWeatherFromJSONFile()
+        appData = readAppDataFromJSONFile()
     }
     
     /**
@@ -75,61 +75,32 @@ extension AppWeatherData {
      Responsible to return all the weather data in initial load
      Returns ForecastWeatherModel
      */
-    func getWeatherFromJSONFile() -> ForecastWeatherModel {
-        let currentWeatherData = loadFromJSONFile(CurrentWeatherInfo.self, "london-current-weather")
-        let hourlySummaryData = loadFromJSONFile(ForecastWeatherInfo.self, "london-hourly-summary")
+    func readAppDataFromJSONFile() -> ForecastWeatherModel {
+        let weatherData = loadFromJSONFile(Forecast.self, "london-weather")
         let pollutionData = loadFromJSONFile(PollutionInfo.self, "london-air-pollution")
         
         // Create and return weather model object.
-        return ForecastWeatherModel(currentWeatherInfo: currentWeatherData, forecastWeatherInfo: hourlySummaryData, pollutionInfo: pollutionData)
-    }
-}
-
-extension AppWeatherData {
-    /**
-     Responsible to return all the current weather info feched by the API call.
-     Returns CurrentWeatherInfo
-     */
-    func getCityCurrentWeather() async throws  -> CurrentWeatherInfo {
-        let cityValidated = urlEncodeString(stringValue: city)
-        let urlInString = "\(APIConfigs.currentWeatherAPI.baseURL)&q=\(String(describing: cityValidated))"
-        do {
-            let currentWeatherData = try await fetchFromWeatherAPI(CurrentWeatherInfo.self, for: urlInString)
-            return currentWeatherData
-        } catch {
-            throw error
-        }
-    }
-    
-    /**
-     Responsible to return all the forecast  weather info feched by the API call.
-     Returns ForecastWeatherInfo
-     */
-    func getCityForecastWeather() async throws  -> ForecastWeatherInfo {
-        let cityValidated = urlEncodeString(stringValue: city)
-        let urlInString = "\(APIConfigs.forecastWeatherAPI.baseURL)&q=\(String(describing: cityValidated))"
-        do {
-            let forecastWeatherData = try await fetchFromWeatherAPI(ForecastWeatherInfo.self, for: urlInString)
-            return forecastWeatherData
-        } catch {
-            throw error
-        }
+        return ForecastWeatherModel(weatherInfo: weatherData, pollutionInfo: pollutionData)
     }
     
     /**
      Responsible to set all the weather  data for  the given city.
      */
-    func getForecstDataForCity() async throws {
+    func getAppDataForCity(lat: Double, lon: Double) async throws {
+        // Build weather url
+        let weatherAPIUrl = "\(APIConfigs.weatherAPI.baseURL)&lat=\(lat)&lon=\(lon)"
+        // Build pollution url
+        let pollutionAPIUrl = "\(APIConfigs.pollutionAPI.baseURL)&lat=\(lat)&lon=\(lon)"
+        
         do {
-            let cityCurrentWeather = try await getCityCurrentWeather()
-            let cityForcastWhether = try await getCityForecastWeather()
-            let cityLatitude = cityCurrentWeather.coord.lat
-            let cityLongitude = cityCurrentWeather.coord.lon
-            let pollutionData = try await fetchPollutionDataFromAPI(lat: cityLatitude, lon: cityLongitude)
+            // fetch weather data from API
+            let weatherData = try await fetchFromWeatherAPI(Forecast.self, for: weatherAPIUrl)
+            // fetch pollution data from API
+            let pollutionData = try await fetchFromWeatherAPI(PollutionInfo.self, for: pollutionAPIUrl)
             
             DispatchQueue.main.async {
                 // Create and set weather model object.
-                self.forecastInfo = ForecastWeatherModel(currentWeatherInfo: cityCurrentWeather, forecastWeatherInfo: cityForcastWhether, pollutionInfo: pollutionData)
+                self.appData = ForecastWeatherModel(weatherInfo: weatherData, pollutionInfo: pollutionData)
             }
         } catch {
             throw error
@@ -137,27 +108,11 @@ extension AppWeatherData {
     }
     
     /**
-     Responsible to fetch all the pollution  data from API.
-     Returns PollutionInfo
-     */
-    func fetchPollutionDataFromAPI(lat: Double, lon: Double) async throws -> PollutionInfo {
-        let urlInString = "\(APIConfigs.pollutionAPI.baseURL)&lat=\(lat)&lon=\(lon)"
-        do {
-            let pollutionData = try await fetchFromWeatherAPI(PollutionInfo.self, for: urlInString)
-            return pollutionData
-        } catch {
-            throw error
-        }
-    }
-}
-
-extension AppWeatherData {
-    /**
      Responsible to map all the pollution data to display.
      Returns [PollutionDataMap]
      */
     func getFormattedPollutionData() -> [PollutionDataMap] {
-        if let forecastInfo = self.forecastInfo, let pollutionComponents = forecastInfo.pollutionInfo.list.first?.components {
+        if let forecastInfo = self.appData, let pollutionComponents = forecastInfo.pollutionInfo.list.first?.components {
             let mappedList = [
                 PollutionDataMap(image: "so2", value: pollutionComponents.so2),
                 PollutionDataMap(image: "no", value: pollutionComponents.no2),

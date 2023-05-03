@@ -14,10 +14,10 @@ struct TemperaturePanel: View {
     @EnvironmentObject private var appWeatherData: AppWeatherData
     
     var body: some View {
-        let current  = appWeatherData.forecastInfo?.currentWeatherInfo
-        let min: Int = Int(current?.main.temp_min ?? 0)
-        let max: Int = Int((current?.main.temp_max ?? 0))
-        let feelsLike: Int = Int(current?.main.temp ?? 0)
+        let current  = appWeatherData.appData?.weatherInfo.current
+        let min: Int = Int(current?.dewPoint ?? 0)
+        let max: Int = Int((current?.temp ?? 0))
+        let feelsLike: Int = Int(current?.feelsLike ?? 0)
         
         VStack (spacing: 30) {
             HStack {

@@ -1,87 +1,88 @@
 //
-//  CurrentWeather.swift
+//  Structures.swift
 //  Weatherella
 //
-//  Created by user234080 on 4/13/23.
+//  Created by user234080 on 5/3/23.
 //
 
 import Foundation
 
-/**
- Current Weather Info
- */
-struct CurrentWeatherInfo: Codable {
-    let name: String
-    let coord: Coordinates
+// MARK: - Forecast
+struct Forecast: Codable, Identifiable {
+    let id = UUID()
+    let lat, lon: Double
+    let timezone: String
+    let timezoneOffset: Int
+    let current: Current
+    let minutely: [Minutely]?
+    let hourly: [Current]
+    let daily: [Daily]
+    
+    enum CodingKeys: String, CodingKey {
+        case lat, lon, timezone
+        case timezoneOffset = "timezone_offset"
+        case current, minutely, hourly, daily
+    }
+}
+
+// MARK: - Current
+struct Current: Codable, Identifiable {
+    let id = UUID()
+    let dt: Int
+    let sunrise, sunset: Int?
+    let temp, feelsLike: Double
+    let pressure, humidity: Int
+    let dewPoint, uvi: Double
+    let clouds, visibility: Int
+    let windSpeed: Double
+    let windDeg: Int
     let weather: [Weather]
-    let main: Main
-    let clouds: Clouds
-    let wind: Wind
-    let dt: Double
-    let sys: DayTimes
+    let windGust, pop: Double?
+    let rain: Rain?
+    
+    enum CodingKeys: String, CodingKey {
+        case dt, sunrise, sunset, temp
+        case feelsLike = "feels_like"
+        case pressure, humidity
+        case dewPoint = "dew_point"
+        case uvi, clouds, visibility
+        case windSpeed = "wind_speed"
+        case windDeg = "wind_deg"
+        case weather
+        case windGust = "wind_gust"
+        case pop, rain
+    }
 }
 
-/**
- Day Times
- */
-struct DayTimes: Codable {
-    let sunrise: Int
-    let sunset: Int
+// MARK: - Rain
+struct Rain: Codable {
+    let the1H: Double
+    
+    enum CodingKeys: String, CodingKey {
+        case the1H = "1h"
+    }
 }
 
-/**
- Coordinates
- */
-struct Coordinates: Codable {
-    let lon: Double
-    let lat: Double
-}
-
-/**
- Main
- */
-struct Main: Codable {
-    let temp: Double
-    let pressure: Int
-    let humidity: Int
-    let temp_min: Double
-    let temp_max: Double
-}
-
-/**
- Weather
- */
+// MARK: - Weather
 struct Weather: Codable {
     let id: Int
-    let main: WeatherMain
-    let description: WeatherDescription
+    let main: Main
+    let weatherDescription: Description
     let icon: String
     
     var iconImageURL: URL? {
         let url = "https://openweathermap.org/img/wn/\(self.icon).png"
         return URL(string: url)
     }
+    
+    enum CodingKeys: String, CodingKey {
+        case id, main
+        case weatherDescription = "description"
+        case icon
+    }
 }
 
-/**
- Wind
- */
-struct Wind: Codable {
-    let speed: Double
-    let deg: Int
-}
-
-/**
- Clouds
- */
-struct Clouds: Codable {
-    let all: Int
-}
-
-/**
- Weather Main
- */
-enum WeatherMain: String, Codable {
+enum Main: String, Codable {
     case clear = "Clear"
     case clouds = "Clouds"
     case rain = "Rain"
@@ -99,10 +100,7 @@ enum WeatherMain: String, Codable {
     case thunderstorm = "Thunderstorm"
 }
 
-/**
- Weather Description
- */
-enum WeatherDescription: String, Codable {
+enum Description: String, Codable {
     case brokenClouds = "broken clouds"
     case clearSky = "clear sky"
     case fewClouds = "few clouds"
@@ -160,4 +158,53 @@ enum WeatherDescription: String, Codable {
     case scatteredClouds2550 = "scattered clouds: 25-50%"
     case brokenClouds5184 = "broken clouds: 51-84%"
     case overcastClouds85100 = "overcast clouds: 85-100%"
+}
+
+// MARK: - Daily
+struct Daily: Codable, Identifiable {
+    let id = UUID()
+    let dt, sunrise, sunset, moonrise: Int
+    let moonset: Int
+    let moonPhase: Double
+    let temp: Temp
+    let feelsLike: FeelsLike
+    let pressure, humidity: Int
+    let dewPoint, windSpeed: Double
+    let windDeg: Int
+    let windGust: Double
+    let weather: [Weather]
+    let clouds: Int
+    let pop: Double
+    let rain: Double?
+    let uvi: Double
+    
+    enum CodingKeys: String, CodingKey {
+        case dt, sunrise, sunset, moonrise, moonset
+        case moonPhase = "moon_phase"
+        case temp
+        case feelsLike = "feels_like"
+        case pressure, humidity
+        case dewPoint = "dew_point"
+        case windSpeed = "wind_speed"
+        case windDeg = "wind_deg"
+        case windGust = "wind_gust"
+        case weather, clouds, pop, rain, uvi
+    }
+}
+
+// MARK: - FeelsLike
+struct FeelsLike: Codable {
+    let day, night, eve, morn: Double
+}
+
+// MARK: - Temp
+struct Temp: Codable {
+    let day, min, max, night: Double
+    let eve, morn: Double
+}
+
+// MARK: - Minutely
+struct Minutely: Codable {
+    let dt: Int
+    let precipitation: Double
 }

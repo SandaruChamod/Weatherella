@@ -15,7 +15,7 @@ struct WeatherStatusPanel: View {
     @State var frameOptions: FrameOption
     
     var body: some View {
-        let current  = appWeatherData.forecastInfo?.currentWeatherInfo
+        let current  = appWeatherData.appData?.weatherInfo.current
         HStack {
             AsyncImage(url: (current?.weather.first?.iconImageURL ?? URL(string: ""))!) {
                 image in

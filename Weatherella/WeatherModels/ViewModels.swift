@@ -8,6 +8,15 @@
 import Foundation
 
 /**
+ Forecast Weather Model
+ */
+struct ForecastWeatherModel: Identifiable {
+    let id = UUID()
+    let weatherInfo: Forecast
+    let pollutionInfo: PollutionInfo
+}
+
+/**
  Pollution Data Map
  */
 struct PollutionDataMap {
