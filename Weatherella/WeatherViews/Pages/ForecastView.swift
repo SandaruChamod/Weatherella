@@ -25,7 +25,7 @@ struct ForecastView: View {
                 
                 VStack {
                     List {
-                        ForEach(forecastList) { forecast in
+                        ForEach(forecastList, id: \.self.id) { forecast in
                             HStack (spacing: 5) {
                                 AsyncImage(url: forecast.weather.first?.iconImageURL) {
                                     image in

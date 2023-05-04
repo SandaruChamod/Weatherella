@@ -116,7 +116,7 @@ extension AppWeatherData {
             let mappedList = [
                 PollutionDataMap(image: "so2", value: pollutionComponents.so2),
                 PollutionDataMap(image: "no", value: pollutionComponents.no2),
-                PollutionDataMap(image: "voc", value: pollutionComponents.no),
+                PollutionDataMap(image: "voc", value: pollutionComponents.o3),
                 PollutionDataMap(image: "pm", value: pollutionComponents.pm10),
             ]
             return mappedList

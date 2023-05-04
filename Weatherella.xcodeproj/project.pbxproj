@@ -8,14 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		3C36707C29E98CF9006C673D /* WindDirHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C36707B29E98CF9006C673D /* WindDirHelper.swift */; };
-		3C4A11A529FF8C7A00EBA330 /* MainTemperatureLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4A11A429FF8C7A00EBA330 /* MainTemperatureLabel.swift */; };
 		3C700B882A017DDD0037277C /* london-weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C700B872A017DDD0037277C /* london-weather.json */; };
 		3C700B8A2A017E200037277C /* Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C700B892A017E200037277C /* Structures.swift */; };
 		3CB85CC729ECEA950040DF81 /* WeatherStatusPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB85CC629ECEA950040DF81 /* WeatherStatusPanel.swift */; };
 		3CB85CC929ECEAEE0040DF81 /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB85CC829ECEAEE0040DF81 /* ViewModels.swift */; };
 		3CB85CCD29ED1BEE0040DF81 /* TemperaturePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB85CCC29ED1BEE0040DF81 /* TemperaturePanel.swift */; };
 		3CB85CCF29ED1F150040DF81 /* LocationPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB85CCE29ED1F150040DF81 /* LocationPanel.swift */; };
-		3CB85CD129ED22FE0040DF81 /* TemperatureLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB85CD029ED22FE0040DF81 /* TemperatureLabel.swift */; };
+		3CB85CD129ED22FE0040DF81 /* CurrentTemperatureLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB85CD029ED22FE0040DF81 /* CurrentTemperatureLabel.swift */; };
 		3CB85CD329ED29650040DF81 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB85CD229ED29650040DF81 /* Int+Extensions.swift */; };
 		3CCD25C429E71FD0002CA6F8 /* WeatherellaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD25C329E71FD0002CA6F8 /* WeatherellaApp.swift */; };
 		3CCD25C829E71FD0002CA6F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CCD25C729E71FD0002CA6F8 /* Assets.xcassets */; };
@@ -38,14 +37,13 @@
 
 /* Begin PBXFileReference section */
 		3C36707B29E98CF9006C673D /* WindDirHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindDirHelper.swift; sourceTree = "<group>"; };
-		3C4A11A429FF8C7A00EBA330 /* MainTemperatureLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTemperatureLabel.swift; sourceTree = "<group>"; };
 		3C700B872A017DDD0037277C /* london-weather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "london-weather.json"; sourceTree = "<group>"; };
 		3C700B892A017E200037277C /* Structures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structures.swift; sourceTree = "<group>"; };
 		3CB85CC629ECEA950040DF81 /* WeatherStatusPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStatusPanel.swift; sourceTree = "<group>"; };
 		3CB85CC829ECEAEE0040DF81 /* ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModels.swift; sourceTree = "<group>"; };
 		3CB85CCC29ED1BEE0040DF81 /* TemperaturePanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperaturePanel.swift; sourceTree = "<group>"; };
 		3CB85CCE29ED1F150040DF81 /* LocationPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPanel.swift; sourceTree = "<group>"; };
-		3CB85CD029ED22FE0040DF81 /* TemperatureLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureLabel.swift; sourceTree = "<group>"; };
+		3CB85CD029ED22FE0040DF81 /* CurrentTemperatureLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTemperatureLabel.swift; sourceTree = "<group>"; };
 		3CB85CD229ED29650040DF81 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		3CCD25C029E71FD0002CA6F8 /* Weatherella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weatherella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CCD25C329E71FD0002CA6F8 /* WeatherellaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherellaApp.swift; sourceTree = "<group>"; };
@@ -85,8 +83,7 @@
 				3CB85CC629ECEA950040DF81 /* WeatherStatusPanel.swift */,
 				3CB85CCC29ED1BEE0040DF81 /* TemperaturePanel.swift */,
 				3CB85CCE29ED1F150040DF81 /* LocationPanel.swift */,
-				3CB85CD029ED22FE0040DF81 /* TemperatureLabel.swift */,
-				3C4A11A429FF8C7A00EBA330 /* MainTemperatureLabel.swift */,
+				3CB85CD029ED22FE0040DF81 /* CurrentTemperatureLabel.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -290,8 +287,7 @@
 				3CCD25D929E720B6002CA6F8 /* APIConfigs.swift in Sources */,
 				3CCD25F429E725E6002CA6F8 /* HourlyView.swift in Sources */,
 				3CB85CD329ED29650040DF81 /* Int+Extensions.swift in Sources */,
-				3C4A11A529FF8C7A00EBA330 /* MainTemperatureLabel.swift in Sources */,
-				3CB85CD129ED22FE0040DF81 /* TemperatureLabel.swift in Sources */,
+				3CB85CD129ED22FE0040DF81 /* CurrentTemperatureLabel.swift in Sources */,
 				3CE77B0E29FA503C002B0CD2 /* URLhelper.swift in Sources */,
 				3CCD25F829E72635002CA6F8 /* PollutionView.swift in Sources */,
 				3CCD25F029E72503002CA6F8 /* CurrentWeatherView.swift in Sources */,

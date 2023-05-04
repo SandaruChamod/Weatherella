@@ -28,5 +28,6 @@ struct PollutionComponents: Codable {
     let so2: Double
     let no2: Double
     let no: Double
+    let o3: Double
     let pm10: Double
 }

@@ -23,7 +23,7 @@ struct HourlyView: View {
             VStack {
                 LocationPanel()
                 List {
-                    ForEach(hourlyList) { summary in
+                    ForEach(hourlyList, id: \.self.id) { summary in
                         HStack {
                             VStack (spacing: 0) {
                                 Text("\((Date(timeIntervalSince1970: TimeInterval(summary.dt)).formatted(.dateTime.hour(.twoDigits(amPM: .wide)))))")
@@ -38,7 +38,7 @@ struct HourlyView: View {
                             } placeholder: {
                                 ProgressView()
                             }
-                            TemperatureLabel(tempLabelModel: TemperatureLabelModel(label: "", temp: summary.temp.toInt(), measurement: .celsius))
+                            CurrentTemperatureLabel(tempLabelModel: TemperatureLabelModel(label: "", measurement: .celsius))
                             Spacer()
                             Text("\(summary.weather.first?.main.rawValue ?? "")")
                                 .listRowSeparatorTint(.red)

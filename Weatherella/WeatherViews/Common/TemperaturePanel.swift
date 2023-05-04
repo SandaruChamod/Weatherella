@@ -14,17 +14,17 @@ struct TemperaturePanel: View {
     @EnvironmentObject private var appWeatherData: AppWeatherData
     
     var body: some View {
-        let current  = appWeatherData.appData?.weatherInfo.current
-        let min: Int = Int(current?.dewPoint ?? 0)
-        let max: Int = Int((current?.temp ?? 0))
-        let feelsLike: Int = Int(current?.feelsLike ?? 0)
+        let temp = appWeatherData.appData?.weatherInfo.daily.first?.temp
+        let min: Int = temp?.min.toInt() ?? 0
+        let max: Int = temp?.max.toInt() ?? 0
+        let feelsLike: Int = temp?.day.toInt() ?? 0
         
         VStack (spacing: 30) {
             HStack {
                 Spacer()
-                TemperatureLabel(tempLabelModel: TemperatureLabelModel(label: "H:", temp: min, measurement: .celsius))
+                Text("H: \(max)\(TempMeasurement.celsius.rawValue)")
                 Spacer()
-                TemperatureLabel(tempLabelModel: TemperatureLabelModel(label: "Low:", temp: max, measurement: .celsius))
+                Text("Low: \(min)\(TempMeasurement.celsius.rawValue)")
                 Spacer()
             }
             

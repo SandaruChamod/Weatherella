@@ -57,7 +57,7 @@ struct HomeView: View {
                     
                     Spacer()
                     
-                    TemperatureLabel(tempLabelModel: TemperatureLabelModel(label: "Temp:", temp: Int(current?.temp ?? 0), measurement: .celsius))
+                    CurrentTemperatureLabel(tempLabelModel: TemperatureLabelModel(label: "Temp:", measurement: .celsius))
                         .font(.title2)
                         .shadow(color: .black, radius: 0.5)
                     

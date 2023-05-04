@@ -25,7 +25,10 @@ struct PollutionView: View {
             VStack (spacing: 30) {
                 LocationPanel()
                 
-                MainTemperatureLabel()
+                CurrentTemperatureLabel(tempLabelModel: TemperatureLabelModel(label: "", measurement: .celsius))
+                    .font(.system(size: 30))
+                    .foregroundColor(.black)
+                    .shadow(color: .black, radius: 0.5)
                 
                 WeatherStatusPanel(frameOptions: FrameOption(width: 80, height: 80))
                 

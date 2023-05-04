@@ -48,7 +48,6 @@ struct TemperatureDataModel {
  */
 struct TemperatureLabelModel {
     let label: String
-    let temp: Int
     let measurement: TempMeasurement
 }
 
