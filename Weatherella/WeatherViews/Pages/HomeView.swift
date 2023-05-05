@@ -70,6 +70,7 @@ struct HomeView: View {
                         HStack {
                             VStack {
                                 WeatherStatusPanel(frameOptions: FrameOption(width: 60, height: 60))
+                                    .foregroundColor(.white)
                                     .padding()
                                     .background(
                                         RoundedRectangle(cornerRadius: 10)
