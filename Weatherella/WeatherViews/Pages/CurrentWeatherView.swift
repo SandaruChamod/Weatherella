@@ -22,17 +22,17 @@ struct CurrentWeatherView: View {
                     .resizable()
                     .ignoresSafeArea(.container)
                 
-                VStack (spacing: 10) {
-                    Spacer(minLength: 90)
-                    VStack {
+                VStack (spacing: 20) {
+                    VStack (spacing: 20) {
                         AppHeader()
                         Text("The bad news is time flies. The good news is you're the pilot.")
                             .multilineTextAlignment(.center)
                             .foregroundColor(.white)
                             .fixedSize(horizontal: false, vertical: true)
+                            .padding(.horizontal, 5)
                     }
-                    .padding(.horizontal, 5)
-                    
+                    .padding(.top, 90)
+
                     VStack {
                         LocationPanel()
                             .foregroundColor(.white)
@@ -40,7 +40,7 @@ struct CurrentWeatherView: View {
                     }
                     .padding(.vertical)
                     
-                    VStack (spacing: 10) {
+                    VStack (spacing: 50) {
                         VStack {
                             HStack {
                                 Spacer()
@@ -88,7 +88,7 @@ struct CurrentWeatherView: View {
                             .padding(.horizontal)
                     )
                     
-                    VStack (spacing: 20) {
+                    VStack (spacing: 30) {
                         TemperaturePanel()
                             .foregroundColor(.black.opacity(0.8))
                         

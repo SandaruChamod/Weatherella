@@ -31,6 +31,16 @@ struct HomeView: View {
                     .ignoresSafeArea(.container)
                 
                 VStack (spacing: 40) {
+                    VStack (spacing: 10) {
+                        AppHeader()
+                        Spacer()
+                        Text("Wherever you go, no matter what the weather, always bring your own sunshine.")
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.white)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .padding(.top, 90)
+
                     HStack {
                         Spacer()
                         Button {
@@ -44,16 +54,8 @@ struct HomeView: View {
                         .cornerRadius(30)
                         Spacer()
                     }
-                    .padding(.top, 70)
                     
-                    VStack {
-                        AppHeader()
-                        Text("Wherever you go, no matter what the weather, always bring your own sunshine.")
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(.white)
-                    }
-                    
-                    VStack (spacing: 10) {
+                    VStack (spacing: 20) {
                         LocationPanel()
                             .foregroundColor(.white)
                             .fontWeight(.heavy)
@@ -66,7 +68,7 @@ struct HomeView: View {
                         .shadow(color: .black, radius: 0.1)
                     }
                     
-                    VStack (spacing: 0) {
+                    VStack (spacing: 10) {
                         HStack {
                             VStack {
                                 WeatherStatusPanel(frameOptions: FrameOption(width: 60, height: 60))
@@ -78,7 +80,7 @@ struct HomeView: View {
                                     )
                             }
                             .padding()
-                            VStack (alignment: .leading, spacing: 20){
+                            VStack (alignment: .leading, spacing: 30){
                                 HStack {
                                     Image(systemName: "thermometer.sun.circle")
                                         .symbolRenderingMode(.multicolor)
@@ -104,7 +106,7 @@ struct HomeView: View {
                             .padding(.horizontal)
                     )
                     
-                    Spacer(minLength: 100)
+                    Spacer(minLength: 15)
                 }
                 .onAppear {
                     Task.init {

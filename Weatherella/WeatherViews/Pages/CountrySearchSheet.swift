@@ -21,7 +21,7 @@ struct CountrySearchSheet: View {
     
     var body: some View {
         ZStack {
-            Color.cyan.opacity(0.8).edgesIgnoringSafeArea(.all)
+            Color("theme").edgesIgnoringSafeArea(.all)
             VStack {
                 TextField("Input City", text: $cityInput, onCommit: onCityInputCommit)
                     .textFieldStyle(.roundedBorder)

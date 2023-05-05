@@ -36,12 +36,11 @@ struct TemperaturePanel: View {
                 Spacer()
             }
             
-            Text("Feels Like \(feelsLike)ºC")
-                .padding()
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color("theme"), lineWidth: 1)
-                )
+            HStack {
+                Image(systemName: "face.smiling")
+                    .symbolRenderingMode(.multicolor)
+                Text("Feels Like \(feelsLike)ºC")
+            }
         }
     }
 }

@@ -45,7 +45,6 @@ struct HourlyView: View {
                             CurrentTemperatureLabel(tempLabelModel: TemperatureLabelModel(label: "", measurement: .celsius))
                             Spacer()
                             Text("\(summary.weather.first?.main.rawValue ?? "")")
-                                .listRowSeparatorTint(.red)
                         }
                         .padding(.horizontal, 20)
                     }

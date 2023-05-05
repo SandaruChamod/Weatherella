@@ -23,15 +23,16 @@ struct PollutionView: View {
                 .ignoresSafeArea(.all)
             
             VStack (spacing: 10) {
-                VStack {
+                VStack (spacing: 20) {
                     AppHeader()
                     Text("Less air pollution is the answer to a healthy life solution.")
                         .fixedSize(horizontal: false, vertical: true)
                         .multilineTextAlignment(.center)
                         .foregroundColor(.white)
                 }
-                .padding(.top, 5)
-                
+                .padding(.top, -10)
+                .padding(.bottom, 10)
+
                 VStack (spacing: 10) {
                     LocationPanel()
                         .foregroundColor(.white)
