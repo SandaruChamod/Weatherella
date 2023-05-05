@@ -16,8 +16,6 @@ struct LocationPanel: View {
     var body: some View {
         Text("\(appWeatherData.city)")
             .font(.title)
-            .foregroundColor(.black)
-            .shadow(color: .black, radius: 0.5)
             .multilineTextAlignment(.center)
             .padding(.horizontal, 3)
     }

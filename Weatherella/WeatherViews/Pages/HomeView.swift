@@ -30,50 +30,80 @@ struct HomeView: View {
                     .resizable()
                     .ignoresSafeArea(.container)
                 
-                VStack (spacing: 30) {
+                VStack (spacing: 40) {
                     HStack {
                         Spacer()
                         Button {
                             self.isLocationChanging.toggle()
                         } label: {
-                            Text("Change Location")
-                                .bold()
-                                .font(.system(size: 30))
+                            Label("Change Location", systemImage: "magnifyingglass")
                         }
                         .padding()
+                        .background(.white)
+                        .foregroundColor(.black)
+                        .cornerRadius(30)
                         Spacer()
-                    }.padding(.vertical, 80)
+                    }
+                    .padding(.top, 70)
+                    
+                    VStack {
+                        AppHeader()
+                        Text("Wherever you go, no matter what the weather, always bring your own sunshine.")
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.white)
+                    }
                     
                     VStack (spacing: 10) {
                         LocationPanel()
+                            .foregroundColor(.white)
+                            .fontWeight(.heavy)
                         
                         Text(Date(timeIntervalSince1970: TimeInterval(current?.dt ?? 0))
                             .formatted(.dateTime.year().hour().month().day()))
+                        .foregroundColor(.white)
                         .padding()
-                        .font(.largeTitle)
-                        .foregroundColor(.black)
-                        .shadow(color: .black, radius: 0.5)
+                        .font(.system(size: 30))
+                        .shadow(color: .black, radius: 0.1)
                     }
                     
-                    Spacer()
+                    VStack (spacing: 0) {
+                        HStack {
+                            VStack {
+                                WeatherStatusPanel(frameOptions: FrameOption(width: 60, height: 60))
+                                    .padding()
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .fill(Color("theme").opacity(0.5))
+                                    )
+                            }
+                            .padding()
+                            VStack (alignment: .leading, spacing: 20){
+                                HStack {
+                                    Image(systemName: "thermometer.sun.circle")
+                                        .symbolRenderingMode(.multicolor)
+                                    CurrentTemperatureLabel(tempLabelModel: TemperatureLabelModel(label: "Temperature ", measurement: .celsius))
+                                        .font(.title2)
+                                        .foregroundColor(.black.opacity(0.8))
+                                }
+                                
+                                IconLabel(icon: "drop.circle", label: "Humidity \(current?.humidity ?? 0)%")
+                                    .foregroundColor(.black.opacity(0.8))
+                                    .font(.title2)
+                                
+                                IconLabel(icon: "arrow.down.forward.and.arrow.up.backward.circle", label: "Pressure \(current?.pressure ?? 0) hPa ")
+                                    .foregroundColor(.black.opacity(0.8))
+                                    .font(.title2)
+                            }
+                        }
+                    }
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(.white.opacity(0.5))
+                            .padding(.horizontal)
+                    )
                     
-                    CurrentTemperatureLabel(tempLabelModel: TemperatureLabelModel(label: "Temp:", measurement: .celsius))
-                        .font(.title2)
-                        .shadow(color: .black, radius: 0.5)
-                    
-                    Text("Humidity:  \(current?.humidity ?? 0)%")
-                        .font(.title2)
-                        .shadow(color: .black, radius: 0.5)
-                    
-                    Text("Pressure:  \(current?.pressure ?? 0) hPa")
-                        .font(.title2)
-                        .shadow(color: .black, radius: 0.5)
-                    
-                    Spacer()
-                    
-                    WeatherStatusPanel(frameOptions: FrameOption(width: 80, height: 80))
-                    
-                    Spacer()
+                    Spacer(minLength: 100)
                 }
                 .onAppear {
                     Task.init {

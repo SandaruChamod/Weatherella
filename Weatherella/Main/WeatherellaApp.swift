@@ -17,7 +17,7 @@ struct WeatherellaApp: App {
     
     var body: some Scene {
         WindowGroup {
-            WeatherellaTabView()
+            SplashScreen()
                 .environmentObject(appWeatherData)
         }
     }

@@ -22,13 +22,26 @@ struct TemperaturePanel: View {
         VStack (spacing: 30) {
             HStack {
                 Spacer()
-                Text("H: \(max)\(TempMeasurement.celsius.rawValue)")
+                HStack {
+                    Image(systemName: "arrow.up")
+                        .symbolRenderingMode(.multicolor)
+                    Text("High \(max)\(TempMeasurement.celsius.rawValue)")
+                }
                 Spacer()
-                Text("Low: \(min)\(TempMeasurement.celsius.rawValue)")
+                HStack {
+                    Image(systemName: "arrow.down")
+                        .symbolRenderingMode(.multicolor)
+                    Text("Low \(min)\(TempMeasurement.celsius.rawValue)")
+                }
                 Spacer()
             }
             
-            Text("Feels Like: \(feelsLike)ºC")
+            Text("Feels Like \(feelsLike)ºC")
+                .padding()
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color("theme"), lineWidth: 1)
+                )
         }
     }
 }

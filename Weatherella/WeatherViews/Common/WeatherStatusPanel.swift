@@ -16,7 +16,7 @@ struct WeatherStatusPanel: View {
     
     var body: some View {
         let current  = appWeatherData.appData?.weatherInfo.current
-        HStack {
+        VStack (spacing: 0) {
             AsyncImage(url: (current?.weather.first?.iconImageURL ?? URL(string: ""))!) {
                 image in
                 image
@@ -26,7 +26,8 @@ struct WeatherStatusPanel: View {
                 ProgressView()
             }
             Text(current?.weather.first?.main.rawValue ?? "")
-                .shadow(color: .black, radius: 0.5)
+                .tracking(1)
+                .font(.system(size: 20))
         }
     }
 }

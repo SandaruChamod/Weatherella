@@ -22,6 +22,10 @@ struct HourlyView: View {
             
             VStack {
                 LocationPanel()
+                    .foregroundColor(.white)
+                    .fontWeight(.heavy)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .shadow(color: .black, radius: 0.1)
                 List {
                     ForEach(hourlyList, id: \.self.id) { summary in
                         HStack {

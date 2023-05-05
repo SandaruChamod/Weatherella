@@ -34,11 +34,8 @@ struct WeatherellaTabView: View {
                     Label("Pollution", systemImage: "aqi.high")
                 }
         }
-        .tint(.blue)
-        .frame(
-            width: UIScreen.main.bounds.width,
-            height: UIScreen.main.bounds.height
-        )
+        .tint(Color("theme"))
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 

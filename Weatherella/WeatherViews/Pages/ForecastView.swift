@@ -22,6 +22,10 @@ struct ForecastView: View {
             
             VStack {
                 LocationPanel()
+                    .foregroundColor(.black)
+                    .fontWeight(.medium)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .shadow(color: .black, radius: 0.1)
                 
                 VStack {
                     List {
