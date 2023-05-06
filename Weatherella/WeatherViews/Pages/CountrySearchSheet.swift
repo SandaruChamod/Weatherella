@@ -47,8 +47,13 @@ struct CountrySearchSheet: View {
             if let lat = placemarks?.first?.location?.coordinate.latitude,
                let lon = placemarks?.first?.location?.coordinate.longitude {
                 Task {
-                    let _ = try await appWeatherData.getAppDataForCity(lat: lat, lon: lon)
-                    appWeatherData.city = await getLocFromLatLong(lat: lat, lon: lon)
+                    do {
+                        let _ = try await appWeatherData.getAppDataForCity(lat: lat, lon: lon)
+                        appWeatherData.city = await getLocFromLatLong(lat: lat, lon: lon)
+                    } catch {
+                        showErrorMessage.toggle()
+                        fatalError("Failed to fetch location data:\n\(error)")
+                    }
                 }
             }
         }
