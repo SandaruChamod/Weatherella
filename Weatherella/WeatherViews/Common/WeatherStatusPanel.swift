@@ -1,5 +1,5 @@
 //
-//  WeatherStatusView.swift
+//  WeatherStatusPanel.swift
 //  Weatherella
 //
 //  Created by user234080 on 4/17/23.

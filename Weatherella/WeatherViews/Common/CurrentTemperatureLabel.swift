@@ -1,5 +1,5 @@
 //
-//  TemperatureLabel.swift
+//  CurrentTemperatureLabel.swift
 //  Weatherella
 //
 //  Created by user234080 on 4/17/23.
@@ -8,7 +8,7 @@
 import SwiftUI
 
 /**
- Temperature Label
+ Current Temperature Label
  */
 struct CurrentTemperatureLabel: View {
     @EnvironmentObject private var appWeatherData: AppWeatherData
