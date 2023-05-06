@@ -7,16 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C36707C29E98CF9006C673D /* WindDirHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C36707B29E98CF9006C673D /* WindDirHelper.swift */; };
+		3C700B882A017DDD0037277C /* london-weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C700B872A017DDD0037277C /* london-weather.json */; };
+		3C700B8A2A017E200037277C /* Structures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C700B892A017E200037277C /* Structures.swift */; };
+		3CAAE0872A04D4D300DA645A /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAAE0862A04D4D300DA645A /* SplashScreen.swift */; };
+		3CAAE08B2A04ECD000DA645A /* AppHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAAE08A2A04ECD000DA645A /* AppHeader.swift */; };
+		3CAAE08F2A052D5200DA645A /* IconLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAAE08E2A052D5200DA645A /* IconLabel.swift */; };
+		3CB85CC729ECEA950040DF81 /* WeatherStatusPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB85CC629ECEA950040DF81 /* WeatherStatusPanel.swift */; };
+		3CB85CC929ECEAEE0040DF81 /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB85CC829ECEAEE0040DF81 /* ViewModels.swift */; };
+		3CB85CCD29ED1BEE0040DF81 /* TemperaturePanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB85CCC29ED1BEE0040DF81 /* TemperaturePanel.swift */; };
+		3CB85CCF29ED1F150040DF81 /* LocationPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB85CCE29ED1F150040DF81 /* LocationPanel.swift */; };
+		3CB85CD129ED22FE0040DF81 /* CurrentTemperatureLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB85CD029ED22FE0040DF81 /* CurrentTemperatureLabel.swift */; };
+		3CB85CD329ED29650040DF81 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB85CD229ED29650040DF81 /* Int+Extensions.swift */; };
 		3CCD25C429E71FD0002CA6F8 /* WeatherellaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD25C329E71FD0002CA6F8 /* WeatherellaApp.swift */; };
 		3CCD25C829E71FD0002CA6F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CCD25C729E71FD0002CA6F8 /* Assets.xcassets */; };
 		3CCD25CC29E71FD1002CA6F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CCD25CB29E71FD1002CA6F8 /* Preview Assets.xcassets */; };
-		3CCD25D529E7208C002CA6F8 /* london-hourly-summary.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CCD25D429E7208C002CA6F8 /* london-hourly-summary.json */; };
 		3CCD25D729E720A4002CA6F8 /* london-air-pollution.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CCD25D629E720A4002CA6F8 /* london-air-pollution.json */; };
-		3CCD25D929E720B6002CA6F8 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD25D829E720B6002CA6F8 /* Keys.swift */; };
+		3CCD25D929E720B6002CA6F8 /* APIConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD25D829E720B6002CA6F8 /* APIConfigs.swift */; };
 		3CCD25DB29E72148002CA6F8 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD25DA29E72148002CA6F8 /* LocationHelper.swift */; };
 		3CCD25DD29E7219B002CA6F8 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD25DC29E7219B002CA6F8 /* Double+Extensions.swift */; };
-		3CCD25E329E722CD002CA6F8 /* CurrentWeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD25E229E722CD002CA6F8 /* CurrentWeatherInfo.swift */; };
-		3CCD25E529E722F2002CA6F8 /* WeatherCodables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD25E429E722F2002CA6F8 /* WeatherCodables.swift */; };
 		3CCD25E729E7234E002CA6F8 /* PollutionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD25E629E7234E002CA6F8 /* PollutionInfo.swift */; };
 		3CCD25EA29E72380002CA6F8 /* AppWeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD25E929E72380002CA6F8 /* AppWeatherData.swift */; };
 		3CCD25EE29E724CA002CA6F8 /* WeatherellaTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD25ED29E724CA002CA6F8 /* WeatherellaTabView.swift */; };
@@ -26,23 +35,31 @@
 		3CCD25F629E72613002CA6F8 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD25F529E72613002CA6F8 /* ForecastView.swift */; };
 		3CCD25F829E72635002CA6F8 /* PollutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD25F729E72635002CA6F8 /* PollutionView.swift */; };
 		3CCD25FA29E72667002CA6F8 /* CountrySearchSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CCD25F929E72667002CA6F8 /* CountrySearchSheet.swift */; };
-		3CCD25FB29E728C5002CA6F8 /* london-current-weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CCD25D329E72066002CA6F8 /* london-current-weather.json */; };
+		3CE77B0E29FA503C002B0CD2 /* URLhelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE77B0D29FA503C002B0CD2 /* URLhelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C36707B29E98CF9006C673D /* WindDirHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindDirHelper.swift; sourceTree = "<group>"; };
+		3C700B872A017DDD0037277C /* london-weather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "london-weather.json"; sourceTree = "<group>"; };
+		3C700B892A017E200037277C /* Structures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structures.swift; sourceTree = "<group>"; };
+		3CAAE0862A04D4D300DA645A /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		3CAAE08A2A04ECD000DA645A /* AppHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHeader.swift; sourceTree = "<group>"; };
+		3CAAE08E2A052D5200DA645A /* IconLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconLabel.swift; sourceTree = "<group>"; };
+		3CB85CC629ECEA950040DF81 /* WeatherStatusPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStatusPanel.swift; sourceTree = "<group>"; };
+		3CB85CC829ECEAEE0040DF81 /* ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModels.swift; sourceTree = "<group>"; };
+		3CB85CCC29ED1BEE0040DF81 /* TemperaturePanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperaturePanel.swift; sourceTree = "<group>"; };
+		3CB85CCE29ED1F150040DF81 /* LocationPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPanel.swift; sourceTree = "<group>"; };
+		3CB85CD029ED22FE0040DF81 /* CurrentTemperatureLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTemperatureLabel.swift; sourceTree = "<group>"; };
+		3CB85CD229ED29650040DF81 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		3CCD25C029E71FD0002CA6F8 /* Weatherella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weatherella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CCD25C329E71FD0002CA6F8 /* WeatherellaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherellaApp.swift; sourceTree = "<group>"; };
 		3CCD25C729E71FD0002CA6F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CCD25C929E71FD1002CA6F8 /* Weatherella.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Weatherella.entitlements; sourceTree = "<group>"; };
 		3CCD25CB29E71FD1002CA6F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		3CCD25D329E72066002CA6F8 /* london-current-weather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "london-current-weather.json"; sourceTree = "<group>"; };
-		3CCD25D429E7208C002CA6F8 /* london-hourly-summary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "london-hourly-summary.json"; sourceTree = "<group>"; };
 		3CCD25D629E720A4002CA6F8 /* london-air-pollution.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "london-air-pollution.json"; sourceTree = "<group>"; };
-		3CCD25D829E720B6002CA6F8 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		3CCD25D829E720B6002CA6F8 /* APIConfigs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfigs.swift; sourceTree = "<group>"; };
 		3CCD25DA29E72148002CA6F8 /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		3CCD25DC29E7219B002CA6F8 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
-		3CCD25E229E722CD002CA6F8 /* CurrentWeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherInfo.swift; sourceTree = "<group>"; };
-		3CCD25E429E722F2002CA6F8 /* WeatherCodables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCodables.swift; sourceTree = "<group>"; };
 		3CCD25E629E7234E002CA6F8 /* PollutionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutionInfo.swift; sourceTree = "<group>"; };
 		3CCD25E929E72380002CA6F8 /* AppWeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWeatherData.swift; sourceTree = "<group>"; };
 		3CCD25ED29E724CA002CA6F8 /* WeatherellaTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherellaTabView.swift; sourceTree = "<group>"; };
@@ -52,6 +69,7 @@
 		3CCD25F529E72613002CA6F8 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
 		3CCD25F729E72635002CA6F8 /* PollutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollutionView.swift; sourceTree = "<group>"; };
 		3CCD25F929E72667002CA6F8 /* CountrySearchSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySearchSheet.swift; sourceTree = "<group>"; };
+		3CE77B0D29FA503C002B0CD2 /* URLhelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLhelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +83,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3CB85CC529ECEA580040DF81 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3CB85CC629ECEA950040DF81 /* WeatherStatusPanel.swift */,
+				3CB85CCC29ED1BEE0040DF81 /* TemperaturePanel.swift */,
+				3CB85CCE29ED1F150040DF81 /* LocationPanel.swift */,
+				3CB85CD029ED22FE0040DF81 /* CurrentTemperatureLabel.swift */,
+				3CAAE08A2A04ECD000DA645A /* AppHeader.swift */,
+				3CAAE08E2A052D5200DA645A /* IconLabel.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		3CCD25B729E71FCF002CA6F8 = {
 			isa = PBXGroup;
 			children = (
@@ -84,10 +115,11 @@
 		3CCD25C229E71FD0002CA6F8 /* Weatherella */ = {
 			isa = PBXGroup;
 			children = (
-				3CCD25EB29E72496002CA6F8 /* Views */,
-				3CCD25E829E72368002CA6F8 /* WeatherAPI */,
-				3CCD25E129E722AE002CA6F8 /* Models */,
-				3CCD25DE29E721B5002CA6F8 /* App */,
+				3CE1DB292A01334000BC7EAE /* AirModels */,
+				3CE1DB282A01333000BC7EAE /* AirViews */,
+				3CCD25EB29E72496002CA6F8 /* WeatherViews */,
+				3CCD25E129E722AE002CA6F8 /* WeatherModels */,
+				3CCD25DE29E721B5002CA6F8 /* Main */,
 				3CCD25D229E7202C002CA6F8 /* Helpers */,
 				3CCD25C729E71FD0002CA6F8 /* Assets.xcassets */,
 				3CCD25C929E71FD1002CA6F8 /* Weatherella.entitlements */,
@@ -107,48 +139,42 @@
 		3CCD25D229E7202C002CA6F8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				3CCD25D629E720A4002CA6F8 /* london-air-pollution.json */,
-				3CCD25D329E72066002CA6F8 /* london-current-weather.json */,
-				3CCD25D429E7208C002CA6F8 /* london-hourly-summary.json */,
-				3CCD25D829E720B6002CA6F8 /* Keys.swift */,
+				3C36707B29E98CF9006C673D /* WindDirHelper.swift */,
+				3CCD25D829E720B6002CA6F8 /* APIConfigs.swift */,
 				3CCD25DA29E72148002CA6F8 /* LocationHelper.swift */,
 				3CCD25DC29E7219B002CA6F8 /* Double+Extensions.swift */,
+				3CB85CD229ED29650040DF81 /* Int+Extensions.swift */,
+				3CE77B0D29FA503C002B0CD2 /* URLhelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		3CCD25DE29E721B5002CA6F8 /* App */ = {
+		3CCD25DE29E721B5002CA6F8 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				3CCD25C329E71FD0002CA6F8 /* WeatherellaApp.swift */,
 			);
-			path = App;
+			path = Main;
 			sourceTree = "<group>";
 		};
-		3CCD25E129E722AE002CA6F8 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				3CCD25E229E722CD002CA6F8 /* CurrentWeatherInfo.swift */,
-				3CCD25E429E722F2002CA6F8 /* WeatherCodables.swift */,
-				3CCD25E629E7234E002CA6F8 /* PollutionInfo.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		3CCD25E829E72368002CA6F8 /* WeatherAPI */ = {
+		3CCD25E129E722AE002CA6F8 /* WeatherModels */ = {
 			isa = PBXGroup;
 			children = (
 				3CCD25E929E72380002CA6F8 /* AppWeatherData.swift */,
+				3CB85CC829ECEAEE0040DF81 /* ViewModels.swift */,
+				3C700B872A017DDD0037277C /* london-weather.json */,
+				3C700B892A017E200037277C /* Structures.swift */,
 			);
-			path = WeatherAPI;
+			path = WeatherModels;
 			sourceTree = "<group>";
 		};
-		3CCD25EB29E72496002CA6F8 /* Views */ = {
+		3CCD25EB29E72496002CA6F8 /* WeatherViews */ = {
 			isa = PBXGroup;
 			children = (
+				3CB85CC529ECEA580040DF81 /* Common */,
 				3CCD25EC29E724A4002CA6F8 /* Pages */,
 			);
-			path = Views;
+			path = WeatherViews;
 			sourceTree = "<group>";
 		};
 		3CCD25EC29E724A4002CA6F8 /* Pages */ = {
@@ -159,8 +185,33 @@
 				3CCD25F129E725AA002CA6F8 /* HomeView.swift */,
 				3CCD25F329E725E6002CA6F8 /* HourlyView.swift */,
 				3CCD25F529E72613002CA6F8 /* ForecastView.swift */,
-				3CCD25F729E72635002CA6F8 /* PollutionView.swift */,
 				3CCD25F929E72667002CA6F8 /* CountrySearchSheet.swift */,
+				3CAAE0862A04D4D300DA645A /* SplashScreen.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		3CE1DB282A01333000BC7EAE /* AirViews */ = {
+			isa = PBXGroup;
+			children = (
+				3CE1DB2A2A01335000BC7EAE /* Pages */,
+			);
+			path = AirViews;
+			sourceTree = "<group>";
+		};
+		3CE1DB292A01334000BC7EAE /* AirModels */ = {
+			isa = PBXGroup;
+			children = (
+				3CCD25E629E7234E002CA6F8 /* PollutionInfo.swift */,
+				3CCD25D629E720A4002CA6F8 /* london-air-pollution.json */,
+			);
+			path = AirModels;
+			sourceTree = "<group>";
+		};
+		3CE1DB2A2A01335000BC7EAE /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				3CCD25F729E72635002CA6F8 /* PollutionView.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -224,10 +275,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CCD25CC29E71FD1002CA6F8 /* Preview Assets.xcassets in Resources */,
-				3CCD25D529E7208C002CA6F8 /* london-hourly-summary.json in Resources */,
+				3C700B882A017DDD0037277C /* london-weather.json in Resources */,
 				3CCD25C829E71FD0002CA6F8 /* Assets.xcassets in Resources */,
 				3CCD25D729E720A4002CA6F8 /* london-air-pollution.json in Resources */,
-				3CCD25FB29E728C5002CA6F8 /* london-current-weather.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,19 +290,29 @@
 			files = (
 				3CCD25F229E725AA002CA6F8 /* HomeView.swift in Sources */,
 				3CCD25DB29E72148002CA6F8 /* LocationHelper.swift in Sources */,
-				3CCD25E329E722CD002CA6F8 /* CurrentWeatherInfo.swift in Sources */,
+				3CB85CCF29ED1F150040DF81 /* LocationPanel.swift in Sources */,
 				3CCD25E729E7234E002CA6F8 /* PollutionInfo.swift in Sources */,
-				3CCD25D929E720B6002CA6F8 /* Keys.swift in Sources */,
+				3C700B8A2A017E200037277C /* Structures.swift in Sources */,
+				3CCD25D929E720B6002CA6F8 /* APIConfigs.swift in Sources */,
 				3CCD25F429E725E6002CA6F8 /* HourlyView.swift in Sources */,
+				3CB85CD329ED29650040DF81 /* Int+Extensions.swift in Sources */,
+				3CB85CD129ED22FE0040DF81 /* CurrentTemperatureLabel.swift in Sources */,
+				3CAAE08F2A052D5200DA645A /* IconLabel.swift in Sources */,
+				3CE77B0E29FA503C002B0CD2 /* URLhelper.swift in Sources */,
 				3CCD25F829E72635002CA6F8 /* PollutionView.swift in Sources */,
 				3CCD25F029E72503002CA6F8 /* CurrentWeatherView.swift in Sources */,
 				3CCD25EE29E724CA002CA6F8 /* WeatherellaTabView.swift in Sources */,
 				3CCD25EA29E72380002CA6F8 /* AppWeatherData.swift in Sources */,
-				3CCD25E529E722F2002CA6F8 /* WeatherCodables.swift in Sources */,
 				3CCD25F629E72613002CA6F8 /* ForecastView.swift in Sources */,
+				3CB85CC929ECEAEE0040DF81 /* ViewModels.swift in Sources */,
+				3CB85CC729ECEA950040DF81 /* WeatherStatusPanel.swift in Sources */,
+				3CAAE0872A04D4D300DA645A /* SplashScreen.swift in Sources */,
+				3CB85CCD29ED1BEE0040DF81 /* TemperaturePanel.swift in Sources */,
 				3CCD25C429E71FD0002CA6F8 /* WeatherellaApp.swift in Sources */,
 				3CCD25DD29E7219B002CA6F8 /* Double+Extensions.swift in Sources */,
+				3CAAE08B2A04ECD000DA645A /* AppHeader.swift in Sources */,
 				3CCD25FA29E72667002CA6F8 /* CountrySearchSheet.swift in Sources */,
+				3C36707C29E98CF9006C673D /* WindDirHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

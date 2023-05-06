@@ -7,14 +7,18 @@
 
 import SwiftUI
 
+/**
+ Weatherella App
+ */
 @main
-struct ForecastApp: App {
+struct WeatherellaApp: App {
     
     @StateObject private var appWeatherData = AppWeatherData()
     
     var body: some Scene {
         WindowGroup {
-            WeatherellaTabView()
-                .environmentObject(appWeatherData)        }
+            SplashScreen()
+                .environmentObject(appWeatherData)
+        }
     }
 }

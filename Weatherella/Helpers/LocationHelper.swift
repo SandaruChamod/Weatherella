@@ -6,10 +6,13 @@
 //
 
 import Foundation
-
 import CoreLocation
-func getLocFromLatLong(lat: Double, lon: Double) async -> String
-{
+
+/**
+ Responsible for return location as a string from latitude and longitude
+ Returns String
+ */
+func getLocFromLatLong(lat: Double, lon: Double) async -> String {
     var locationString: String
     var placemarks: [CLPlacemark]
     let center: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: lat, longitude: lon)
@@ -20,22 +23,18 @@ func getLocFromLatLong(lat: Double, lon: Double) async -> String
     do {
         placemarks = try await ceo.reverseGeocodeLocation(loc)
         if placemarks.count > 0 {
-            
-            
             if (!placemarks[0].name!.isEmpty) {
-                
-                locationString = placemarks[0].name!
+                locationString = "\(placemarks[0].name!), \(placemarks[0].locality!), \(placemarks[0].country!)"
                 
             } else {
                 locationString = (placemarks[0].locality ?? "No City")
             }
-            
             return locationString
         }
     } catch {
         print("Reverse geodecoe fail: \(error.localizedDescription)")
         locationString = "No City, No Country"
-       
+        
         return locationString
     }
     
